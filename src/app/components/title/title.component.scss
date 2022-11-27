@@ -1,0 +1,50 @@
+.container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+
+  &__line {
+    height: 1px;
+    width: 100%;
+    background-color: black;
+  }
+  &__text {
+    padding: 0 15px;
+    font-size: 3.2rem;
+    font-weight: 700;
+  }
+}
+
+@media (min-width: 576px) {
+  .container {
+    &__text {
+      padding: 0 25px;
+      font-size: 3.6rem;
+    }
+  }
+}
+@media (min-width: 768px) {
+  .container {
+    &__text {
+      padding: 0 35px;
+      font-size: 4rem;
+    }
+  }
+}
+@media (min-width: 992px) {
+  .container {
+    &__text {
+      padding: 0 45px;
+      font-size: 4.4rem;
+    }
+  }
+}
+@media (min-width: 1200px) {
+  .container {
+    &__text {
+      padding: 0 55px;
+      font-size: 4.8rem;
+    }
+  }
+}

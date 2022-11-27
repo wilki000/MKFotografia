@@ -1,1 +1,31 @@
 /* You can add global styles to this file, and also import other style files */
+@font-face {
+  font-family: "CenturyGothic";
+  src: local("CenturyGothic"),
+    url(./assets/fonts/CenturyGothic/CenturyGothic.ttf) format("truetype");
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 62.5%; // font-size 10px
+  scroll-behavior: smooth;
+}
+
+body {
+  font-size: 1.6rem;
+  font-family: "CenturyGothic";
+  color: #333;
+  letter-spacing: 1px;
+  background-color: rgb(255, 255, 255);
+}
+
+.wrapper {
+	margin: 0 auto;
+	width: 100%;
+	max-width: 1200px;
+}
