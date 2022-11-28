@@ -8,6 +8,7 @@ import { TitleComponent } from './components/title/title.component';
 import { IntroductionComponent } from './components/introduction/introduction.component';
 import { InfoComponent } from './components/info/info.component';
 import { IconModule } from '@visurel/iconify-angular';
+import { SpecialPhotoComponent } from './components/special-photo/special-photo.component';
 
 @NgModule({
   declarations: [
@@ -16,6 +17,7 @@ import { IconModule } from '@visurel/iconify-angular';
     TitleComponent,
     IntroductionComponent,
     InfoComponent,
+    SpecialPhotoComponent,
   ],
   imports: [BrowserModule, AppRoutingModule, IconModule],
   providers: [],
