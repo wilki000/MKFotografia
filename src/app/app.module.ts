@@ -6,19 +6,19 @@ import { AppComponent } from './app.component';
 import { HomePageComponent } from './pages/home-page/home-page.component';
 import { TitleComponent } from './components/title/title.component';
 import { IntroductionComponent } from './components/introduction/introduction.component';
+import { InfoComponent } from './components/info/info.component';
+import { IconModule } from '@visurel/iconify-angular';
 
 @NgModule({
   declarations: [
     AppComponent,
     HomePageComponent,
     TitleComponent,
-    IntroductionComponent
+    IntroductionComponent,
+    InfoComponent,
   ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule
-  ],
+  imports: [BrowserModule, AppRoutingModule, IconModule],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}
