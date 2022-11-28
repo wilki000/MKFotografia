@@ -1,0 +1,162 @@
+.container {
+  display: grid;
+  grid-template-columns: 1fr;
+  img {
+    width: 100%;
+    object-fit: cover;
+  }
+  &__first-img {
+    padding-top: 1rem;
+    height: 215px;
+  }
+  &__second-img {
+    height: 395px;
+  }
+  &__title {
+    padding: 1rem;
+    font-size: 3.6rem;
+    text-align: center;
+  }
+  &__about-me {
+    text-align: center;
+    &__name {
+      padding-top: 2.5rem;
+      font-size: 3.2rem;
+      font-weight: 700;
+    }
+    &__who-i-am {
+      padding-bottom: 2.5rem;
+      font-size: 1rem;
+      font-weight: 700;
+    }
+    &__description {
+      padding-bottom: 1.2rem;
+      font-size: 1.2rem;
+      text-align: justify;
+      &:nth-child(7) {
+        padding-bottom: 0;
+      }
+    }
+    &__btn {
+      margin-top: 2rem;
+      margin-bottom: 2rem;
+    }
+  }
+}
+
+@media (min-width: 576px) {
+  .container {
+    &__first-img {
+      height: 400px;
+    }
+    &__second-img {
+      height: 500px;
+    }
+    &__title {
+      font-size: 4rem;
+    }
+    &__about-me {
+      margin-left: 1.5rem;
+      margin-right: 1.5rem;
+      &__name {
+        font-size: 3.6rem;
+      }
+      &__who-i-am {
+        padding-bottom: 3rem;
+      }
+      &__btn {
+        margin-top: 3rem;
+      }
+    }
+  }
+}
+
+@media (min-width: 768px) {
+  .container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    &__first-img {
+      padding-top: 0;
+      height: 300px;
+    }
+    &__second-img {
+      height: 620px;
+      grid-column: 2/3;
+    }
+    &__title {
+      margin: auto 2rem;
+      font-size: 4.6rem;
+      text-align: left;
+    }
+    &__about-me {
+      grid-column: 1/2;
+      grid-row: 2/3;
+      margin: auto 2rem;
+      &__name {
+        font-size: 4rem;
+      }
+      &__who-i-am {
+        font-size: 1.2rem;
+      }
+      &__btn {
+        margin-top: 3rem;
+      }
+    }
+  }
+}
+
+@media (min-width: 992px) {
+  .container {
+    &__title {
+      margin-left: 2.5rem;
+      font-size: 5rem;
+    }
+    &__about-me {
+      margin-left: 3rem;
+      margin-right: 3rem;
+      &__name {
+        font-size: 4.4rem;
+      }
+      &__who-i-am {
+        padding-bottom: 4rem;
+      }
+      &__description {
+        font-size: 1.4rem;
+      }
+      &__btn {
+        margin-top: 4rem;
+      }
+    }
+  }
+}
+
+@media (min-width: 1200px) {
+  .container {
+    &__first-img {
+      height: 400px;
+    }
+    &__second-img {
+      height: 730px;
+    }
+    &__title {
+      margin-left: 3rem;
+      font-size: 6.4rem;
+    }
+    &__about-me {
+      margin-left: 4rem;
+      margin-right: 4rem;
+      &__name {
+        font-size: 4.8rem;
+      }
+      &__who-i-am {
+        font-size: 1.3rem;
+      }
+      &__description {
+        font-size: 1.5rem;
+      }
+      &__btn {
+        margin-top: 5rem;
+      }
+    }
+  }
+}

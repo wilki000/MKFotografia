@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { TitleComponent } from '@components/title/title.component'
+import { IntroductionComponent } from '@components/introduction/introduction.component'
 
 @Component({
   selector: 'app-home-page',

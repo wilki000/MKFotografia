@@ -17,7 +17,7 @@ html {
 }
 
 body {
-  font-size: 1.6rem;
+  font-size: 1.5rem;
   font-family: "CenturyGothic";
   color: #333;
   letter-spacing: 1px;
@@ -25,7 +25,54 @@ body {
 }
 
 .wrapper {
-	margin: 0 auto;
-	width: 100%;
-	max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem;
+  width: 100%;
+  max-width: 1200px;
+}
+
+.btn-reset {
+  // background: none;
+  // color: inherit;
+  border: 2px solid transparent;
+  // padding: 0;
+  font: inherit;
+  cursor: pointer;
+  // outline: inherit;
+}
+
+.btn-black {
+  height: 50px;
+  padding: 0 2rem;
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: white;
+  background-color: #333;
+  transition: color 0.3s, background-color 0.3s, border 0.3s;
+  &:hover {
+    color: #333;
+    background-color: rgb(255, 255, 255);
+    border: 2px solid #333;
+  }
+  &:active {
+    background-color: rgb(255, 255, 255);
+  }
+}
+
+@media (min-width: 768px) {
+  .black-btn {
+    height: 55px;
+    padding: 0 2.5rem;
+  }
+}
+
+@media (min-width: 1200px) {
+  .wrapper {
+    padding: 0;
+  }
+  .black-btn {
+    height: 60px;
+    padding: 0 3rem;
+    font-size: 1.6rem;
+  }
 }
