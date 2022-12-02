@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { TitleComponent } from '@components/title/title.component'
 import { IntroductionComponent } from '@components/introduction/introduction.component'
 import { InfoComponent } from '@components/info/info.component'
+import { DoubtComponent } from '@components/doubt/doubt.component'
 
 @Component({
   selector: 'app-home-page',

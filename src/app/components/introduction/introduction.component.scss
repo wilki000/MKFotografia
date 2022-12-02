@@ -7,14 +7,14 @@
   }
   &__first-img {
     padding-top: 1rem;
-    height: 215px;
+    height: 250px;
   }
   &__second-img {
-    height: 395px;
+    height: 500px;
   }
   &__title {
     padding: 1rem;
-    font-size: 3.6rem;
+    font-size: 4.8rem;
     text-align: center;
   }
   &__about-me {
@@ -26,12 +26,14 @@
     }
     &__who-i-am {
       padding-bottom: 2.5rem;
-      font-size: 1rem;
+      font-size: 1.2rem;
       font-weight: 700;
     }
     &__description {
+      padding-left: 1.5rem;
+      padding-right: 1.5rem;
       padding-bottom: 1.2rem;
-      font-size: 1.2rem;
+      font-size: 1.4rem;
       text-align: justify;
       &:nth-child(7) {
         padding-bottom: 0;
@@ -50,10 +52,10 @@
       height: 400px;
     }
     &__second-img {
-      height: 500px;
+      height: 600px;
     }
     &__title {
-      font-size: 4rem;
+      font-size: 5.2rem;
     }
     &__about-me {
       margin-left: 1.5rem;
@@ -73,34 +75,21 @@
 
 @media (min-width: 768px) {
   .container {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    &__first-img {
-      padding-top: 0;
-      height: 300px;
-    }
     &__second-img {
-      height: 620px;
-      grid-column: 2/3;
+      height: 660px;
     }
     &__title {
-      margin: auto 2rem;
-      font-size: 4.6rem;
-      text-align: left;
+      font-size: 5.6rem;
     }
     &__about-me {
-      grid-column: 1/2;
-      grid-row: 2/3;
-      margin: auto 2rem;
       &__name {
         font-size: 4rem;
       }
       &__who-i-am {
-        font-size: 1.2rem;
+        padding-bottom: 4rem;
       }
       &__btn {
-        margin-top: 3rem;
-        margin-bottom: 1rem;
+        margin-top: 4rem;
       }
     }
   }
@@ -108,24 +97,38 @@
 
 @media (min-width: 992px) {
   .container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    &__first-img {
+      padding-top: 0;
+    }
+    &__second-img {
+      height: 690px;
+      grid-column: 2/3;
+    }
     &__title {
-      margin-left: 2.5rem;
-      font-size: 5rem;
+      margin: auto 2rem;
+      font-size: 6rem;
+      text-align: left;
     }
     &__about-me {
-      margin-left: 3rem;
-      margin-right: 3rem;
+      grid-column: 1/2;
+      grid-row: 2/3;
+
+      margin: auto 3rem;
       &__name {
+        padding-top: 0;
         font-size: 4.4rem;
       }
       &__who-i-am {
         padding-bottom: 4rem;
       }
       &__description {
-        font-size: 1.4rem;
+        font-size: 1.45rem;
       }
       &__btn {
         margin-top: 2rem;
+        margin-bottom: 0;
       }
     }
   }
@@ -140,7 +143,7 @@
       height: 730px;
     }
     &__title {
-      margin-left: 3rem;
+      margin-left: 4rem;
       font-size: 6.4rem;
     }
     &__about-me {
