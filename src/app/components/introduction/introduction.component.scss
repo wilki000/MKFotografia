@@ -1,20 +1,19 @@
 .container {
-  display: grid;
-  grid-template-columns: 1fr;
   img {
     width: 100%;
     object-fit: cover;
   }
   &__first-img {
-    padding-top: 1rem;
+    padding: 1rem 1rem 0;
     height: 250px;
   }
   &__second-img {
+    padding: 1rem;
     height: 500px;
   }
   &__title {
     padding: 1rem;
-    font-size: 4.8rem;
+    font-size: 4.4rem;
     text-align: center;
   }
   &__about-me {
@@ -42,6 +41,14 @@
     &__btn {
       margin-top: 3rem;
       margin-bottom: 6.5rem;
+    }
+  }
+}
+
+@media (min-width: 375px) {
+  .container {
+    &__title {
+      font-size: 4.8rem;
     }
   }
 }
@@ -100,9 +107,10 @@
     display: grid;
     grid-template-columns: 1fr 1fr;
     &__first-img {
-      padding-top: 0;
+      padding: 0;
     }
     &__second-img {
+      padding: 0;
       height: 690px;
       grid-column: 2/3;
     }

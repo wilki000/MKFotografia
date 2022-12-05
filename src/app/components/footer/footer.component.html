@@ -1,0 +1,71 @@
+<section class="background">
+  <div class="wrapper container">
+    <div class="container__contact-box">
+      <h3 class="container__contact-box__title">Kontakt</h3>
+      <div class="container__contact-box__phone">
+        <ic-icon
+          [icon]="phoneIcon"
+          width="36"
+          height="36"
+          class="container__contact-box__phone__icon"
+        ></ic-icon>
+        <a href="tel:575122002" class="container__contact-box__phone__text"
+          >+48 575 122 002</a
+        >
+      </div>
+      <div class="container__contact-box__e-mail">
+        <ic-icon
+          [icon]="emailIcon"
+          width="36"
+          height="36"
+          class="container__contact-box__e-mail__icon"
+        ></ic-icon>
+        <a
+          href="mailto:mkalicka24@gmail.com"
+          class="container__contact-box__e-mail__text"
+        >
+          mkalicka24@gmail.com
+        </a>
+      </div>
+    </div>
+    <div class="container__social-box">
+      <h3 class="container__social-box__title">Social Media</h3>
+      <a
+        class="container__social-box__fb"
+        href="https://www.facebook.com/Monika.Kalicka.Fotograf"
+      >
+        <ic-icon
+          [icon]="fbIcon"
+          width="36"
+          height="36"
+          class="container__social-box__fb__icon"
+        ></ic-icon>
+        <p class="container__social-box__fb__text">
+          Odwiedź mnie na facebooku aby być na bieżąco
+        </p>
+      </a>
+      <a
+        class="container__social-box__inst"
+        href="https://www.instagram.com/mkalickafoto/"
+      >
+        <ic-icon
+          [icon]="instIcon"
+          width="36"
+          height="36"
+          class="container__social-box__inst__icon"
+        ></ic-icon>
+        <p class="container__social-box__inst__text">
+          Odwiedź mojego instagrama
+        </p>
+      </a>
+    </div>
+    <div class="container__logo-box">
+      <div class="container__logo-box__logo">
+        <img src="/assets/img/logo-white.svg" alt="MK logo Fotografia Ślubna" />
+      </div>
+      <div class="container__logo-box__copyright">
+        {{ getDate() | date : "yyyy" }} {{ footer }}
+      </div>
+    </div>
+  </div>
+</section>

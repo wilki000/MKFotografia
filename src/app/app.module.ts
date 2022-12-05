@@ -10,6 +10,7 @@ import { InfoComponent } from './components/info/info.component';
 import { IconModule } from '@visurel/iconify-angular';
 import { SpecialPhotoComponent } from './components/special-photo/special-photo.component';
 import { DoubtComponent } from './components/doubt/doubt.component';
+import { FooterComponent } from './components/footer/footer.component';
 
 @NgModule({
   declarations: [
@@ -20,6 +21,7 @@ import { DoubtComponent } from './components/doubt/doubt.component';
     InfoComponent,
     SpecialPhotoComponent,
     DoubtComponent,
+    FooterComponent,
   ],
   imports: [BrowserModule, AppRoutingModule, IconModule],
   providers: [],
