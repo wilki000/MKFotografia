@@ -1,0 +1,62 @@
+.photo {
+  position: relative;
+  height: 550px;
+  max-width: 100vw;
+  background-image: url(/assets/img/specialphoto.webp);
+  background-size: cover;
+  background-position: center;
+}
+
+.photo__label {
+  position: absolute;
+  top: 70%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  padding: 2rem 0;
+  width: 100%;
+  text-align: center;
+  background-color: rgba(0, 0, 0, 0.05);
+  -webkit-backdrop-filter: blur(7.5px);
+          backdrop-filter: blur(7.5px);
+}
+
+.photo__label__text {
+  padding: 0 1rem 0.5em;
+  font-size: 2.4rem;
+  color: #fff;
+}
+
+@media (min-width: 576px) {
+  .photo__label__text {
+    font-size: 2.7rem;
+  }
+}
+
+@media (min-width: 768px) {
+  .photo__label {
+    padding: 2.5rem 0;
+  }
+  .photo__label__text {
+    font-size: 3rem;
+  }
+}
+
+@media (min-width: 992px) {
+  .photo__label__text {
+    font-size: 3.3rem;
+  }
+}
+
+@media (min-width: 1200px) {
+  .photo {
+    background-attachment: fixed;
+  }
+  .photo__label {
+    padding: 3rem 0;
+  }
+  .photo__label__text {
+    font-size: 3.6rem;
+  }
+}
+/*# sourceMappingURL=special-photo.component.css.map */

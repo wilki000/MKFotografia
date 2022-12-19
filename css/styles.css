@@ -1,18 +1,18 @@
 /* You can add global styles to this file, and also import other style files */
 @font-face {
   font-family: "CenturyGothic";
-  src: local("CenturyGothic"),
-    url(./assets/fonts/CenturyGothic/CenturyGothic.ttf) format("truetype");
+  src: local("CenturyGothic"), url(./assets/fonts/CenturyGothic/CenturyGothic.ttf) format("truetype");
 }
 
 * {
-  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
   margin: 0;
   padding: 0;
 }
 
 html {
-  font-size: 62.5%; // font-size 10px
+  font-size: 62.5%;
   scroll-behavior: smooth;
 }
 
@@ -21,7 +21,7 @@ body {
   font-family: "CenturyGothic";
   color: #333;
   letter-spacing: 1px;
-  background-color: rgb(255, 255, 255);
+  background-color: white;
 }
 
 .wrapper {
@@ -48,15 +48,18 @@ body {
   font-weight: 700;
   color: white;
   background-color: #333;
+  -webkit-transition: color 0.3s, background-color 0.3s, border 0.3s;
   transition: color 0.3s, background-color 0.3s, border 0.3s;
-  &:hover {
-    color: #333;
-    background-color: rgb(255, 255, 255);
-    border: 2px solid #333;
-  }
-  &:active {
-    background-color: rgb(255, 255, 255);
-  }
+}
+
+.btn-black:hover {
+  color: #333;
+  background-color: white;
+  border: 2px solid #333;
+}
+
+.btn-black:active {
+  background-color: white;
 }
 
 @media (min-width: 768px) {
@@ -71,3 +74,4 @@ body {
     font-size: 1.6rem;
   }
 }
+/*# sourceMappingURL=styles.css.map */

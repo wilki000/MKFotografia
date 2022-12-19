@@ -1,0 +1,119 @@
+// li a ~ ul {
+//   background-color: red;
+//   position: absolute;
+// }
+li {
+  max-width: 100vw;
+  text-align: left;
+  list-style: none outside none;
+  text-transform: uppercase;
+  font-weight: 700;
+  
+  .category {
+    display: inline-block;
+    padding-top: 1.2rem;
+    padding-left: 2rem;
+    padding-bottom: 1.2rem;
+    width: 100%;
+    text-decoration: none;
+    color: #fff;
+    border-bottom: 2px solid #fff;
+    transition: color 0.5s, background-color 0.5s;
+    .svg {
+      width: 20px;
+      height: 14px;
+      path {
+        fill: #fff;
+        transition: fill 0.5s;
+      }
+    }
+    &:hover {
+      color: #333;
+      background-color: #fff;
+    }
+    &:hover > .svg > path {
+      fill: #333;
+    }
+  }
+  .subcategory {
+    //background-color: tomato;
+    &__item {
+      display: inline-block;
+      padding-top: 1.2rem;
+      padding-left: 3rem;
+      padding-bottom: 1.2rem;
+      width: 100%;
+      color: #fff;
+      text-decoration: none;
+      background-color: rgb(133, 133, 133);
+      border-bottom: 1px solid #fff;
+      transition: color 0.5s, background-color 0.5s;
+      &:hover {
+        color: #333;
+        background-color: rgb(255, 255, 255);
+      }
+    }
+  }
+}
+
+.toggle {
+  display: none;
+}
+
+@media (min-width: 992px) {
+  li {
+    .category ~ .subcategory {
+      position: absolute;
+      //background-color: rgb(119, 0, 255);
+    }
+    &.last {
+      a {
+        background-color: #fff;
+        color: #333;
+
+        &:hover {
+          background-color: #333;
+          color: #fff;
+        }
+      }
+    }
+    &:hover > .subcategory {
+      display: block;
+    }
+    .category {
+      padding: 1.5rem 3rem;
+      text-decoration: none;
+      color: #fff;
+      border-bottom: none;
+      transition: color 0.5s, background-color 0.5s;
+      &:hover{
+        color: #333;
+        background-color: #fff;
+        fill: #333;
+      }
+      &:hover > .svg > path {
+        fill: #333;
+      }
+    }
+
+    .subcategory {
+      //background-color: tomato;
+      display: none;
+      &__item {
+        padding-top: 1.4rem;
+        padding-left: 2rem;
+        padding-bottom: 1.4rem;
+        padding-right: 2rem;
+        color: #fff;
+        background-color: rgba(41, 41, 41, 0.704);
+        text-decoration: none;
+        border-bottom: none;
+        transition: color 0.5s, background-color 0.5s;
+        &:hover {
+          color: #333;
+          background-color: #fff;
+        }
+      }
+    }
+  }
+}

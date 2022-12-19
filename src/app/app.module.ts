@@ -11,6 +11,8 @@ import { IconModule } from '@visurel/iconify-angular';
 import { SpecialPhotoComponent } from './components/special-photo/special-photo.component';
 import { DoubtComponent } from './components/doubt/doubt.component';
 import { FooterComponent } from './components/footer/footer.component';
+import { NavigationComponent } from './components/navigation/navigation.component';
+import { NavItemComponent } from './components/navigation/nav-item/nav-item.component';
 
 @NgModule({
   declarations: [
@@ -22,6 +24,8 @@ import { FooterComponent } from './components/footer/footer.component';
     SpecialPhotoComponent,
     DoubtComponent,
     FooterComponent,
+    NavigationComponent,
+    NavItemComponent,
   ],
   imports: [BrowserModule, AppRoutingModule, IconModule],
   providers: [],
