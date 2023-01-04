@@ -1,9 +1,3 @@
-.slajder {
-  height: 100vh;
-  max-width: 100vw;
-  background-color: rgb(213, 210, 219);
-}
-
 .visible {
   animation: visible 0.5s forwards;
 }
@@ -15,7 +9,7 @@ nav {
   position: absolute;
   top: 0;
   height: 90px;
-  width: 100%;
+  max-width: 100%;
 }
 
 .sticky {
@@ -23,7 +17,7 @@ nav {
   top: 0;
   height: 90px;
   width: 100%;
-  z-index: 15;
+  z-index: 999;
 }
 
 .navbar {
@@ -128,9 +122,19 @@ nav {
   }
 
   .navbar {
-    background-color: transparent;
+    background-color: transparent; 
+    padding-left: 3rem;
+    padding-right: 3rem;
     &__nav-box {
       height: 90px;
+
+
+      //dodatkowy kod
+      margin: 0 auto;
+      padding: 0;
+      max-width: 100%;
+      max-width: 1400px;
+
       &__checkbox {
         display: none;
       }
@@ -146,6 +150,7 @@ nav {
         justify-content: flex-end;
         align-items: center;
         padding-top: 0;
+        max-width: 1400px;
         height: 90px;
         transform: translateX(0);
         background-color: transparent;

@@ -1,7 +1,6 @@
 import { Component, HostListener, OnInit } from '@angular/core';
-import { NavItemComponent } from './nav-item/nav-item.component';
 import { NavItemModel, CATEGORIES } from '@models/nav-item-model';
-import { ColdObservable } from 'rxjs/internal/testing/ColdObservable';
+
 
 @Component({
   selector: 'app-navigation',

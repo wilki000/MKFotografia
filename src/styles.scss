@@ -28,7 +28,7 @@ body {
   margin: 0 auto;
   padding: 0;
   width: 100%;
-  max-width: 1200px;
+  max-width: 1400px;
 }
 
 .noscroll {
@@ -66,6 +66,9 @@ body {
 }
 
 @media (min-width: 1200px) {
+  body {
+    font-size: 1.6rem;
+  }
   .black-btn {
     height: 60px;
     font-size: 1.6rem;

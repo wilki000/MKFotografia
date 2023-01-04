@@ -1,0 +1,44 @@
+<!-- Slideshow container -->
+<section class="slideshow-container">
+  <!-- Full-width images with number and caption text -->
+
+  <div class="slideshow-container__slides">
+    <div
+      class="slideshow-container__slides__slide"
+      *ngFor="let photo of sliderPhotos; let first = first"
+      [ngStyle]="photo.photoStyle"
+    >
+      <div class="slideshow-container__slides__slide__photo-box">
+        <div
+          class="slideshow-container__slides__slide__photo-box__image"
+          [style.background-image]="'url(' + photo.image + ')'"
+          title="{{ photo.alt }}"
+        ></div>
+        <div
+          class="slideshow-container__slides__slide__photo-box__overlay"
+        ></div>
+      </div>
+      <div class="slideshow-container__slides__slide__bottom-box wrapper">
+        <div
+          class="slideshow-container__slides__slide__bottom-box__text-box"
+          [ngStyle]="photo.textStyle"
+        >
+          <h1>{{ photo.title }}</h1>
+          <h2>
+            {{ photo.subtitle }}
+          </h2>
+        </div>
+        <div class="slideshow-container__slides__slide__bottom-box__line"></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="wrapper">
+    <app-change-item
+      [lastItemIndex]="numberOfPhotos"
+      (changeItem)="changePhoto($event)"
+      [align]="'right'"
+      [delay]="4500"
+    ></app-change-item>
+  </div>
+</section>

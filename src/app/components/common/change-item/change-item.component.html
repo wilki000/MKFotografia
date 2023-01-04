@@ -1,0 +1,49 @@
+<div class="change-item">
+  <svg
+    class="change-item__button-left btn"
+    id="Warstwa_1"
+    data-name="Warstwa 1"
+    xmlns="http://www.w3.org/2000/svg"
+    viewBox="0 0 130 30"
+    (click)="clickLeftArrow()"
+  >
+    <defs>
+      <style>
+        .cls-1 {
+          fill: none;
+          stroke: #f6f6f6;
+          stroke-miterlimit: 10;
+        }
+      </style>
+    </defs>
+    <title>whiteObszar roboczy 2</title>
+    <line class="cls-1" x1="130.16" y1="14.78" x2="1.09" y2="14.78" />
+    <polyline class="cls-1" points="9.66 8.76 1.09 14.78 9.66 20.8" />
+  </svg>
+
+  <div class="change-item__changing-number number">{{ currentItemIndex }}</div>
+  <div class="change-item__slash"></div>
+  <div class="change-item__number-of-photos number">{{ lastItemIndex }}</div>
+
+  <svg
+    class="change-item__button-right btn"
+    id="Warstwa_1"
+    data-name="Warstwa 1"
+    xmlns="http://www.w3.org/2000/svg"
+    viewBox="0 0 130 30"
+    (click)="clickRightArrow()"
+  >
+    <defs>
+      <style>
+        .cls-1 {
+          fill: none;
+          stroke: #f6f6f6;
+          stroke-miterlimit: 10;
+        }
+      </style>
+    </defs>
+    <title>whiteObszar roboczy 1</title>
+    <line class="cls-1" x1="0.16" y1="14.78" x2="129.23" y2="14.78" />
+    <polyline class="cls-1" points="120.66 20.8 129.23 14.78 120.66 8.76" />
+  </svg>
+</div>

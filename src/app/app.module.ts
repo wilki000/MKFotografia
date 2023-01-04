@@ -13,6 +13,8 @@ import { DoubtComponent } from './components/doubt/doubt.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { NavigationComponent } from './components/navigation/navigation.component';
 import { NavItemComponent } from './components/navigation/nav-item/nav-item.component';
+import { SliderComponent } from './components/slider/slider.component';
+import { ChangeItemComponent } from './components/common/change-item/change-item.component';
 
 @NgModule({
   declarations: [
@@ -26,6 +28,8 @@ import { NavItemComponent } from './components/navigation/nav-item/nav-item.comp
     FooterComponent,
     NavigationComponent,
     NavItemComponent,
+    SliderComponent,
+    ChangeItemComponent,
   ],
   imports: [BrowserModule, AppRoutingModule, IconModule],
   providers: [],
