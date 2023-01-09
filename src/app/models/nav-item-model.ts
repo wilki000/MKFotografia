@@ -26,36 +26,36 @@ export const CATEGORIES: NavItemModel[] = [
   },
   {
     displayName: 'Oferta',
-    path: '/offer',
+    path: '',
     last: false,
     subCategories: [
       {
         displayName: 'Reportaż ślubny',
-        path: '/wedding-reportage',
+        path: '/offer/wedding-reportage',
         last: false,
         subCategories: null,
       },
       {
         displayName: 'Sesja ślubna/narzeczeńska',
-        path: '/engagement-wedding-session',
+        path: '/offer/engagement-wedding-session',
         last: false,
         subCategories: null,
       },
       {
         displayName: 'Chrzest',
-        path: '/christening',
+        path: '/offer/christening',
         last: false,
         subCategories: null,
       },
       {
         displayName: 'Komunia',
-        path: '/communion',
+        path: '/offer/communion',
         last: false,
         subCategories: null,
       },
       {
         displayName: 'Pełna oferta',
-        path: '/full-offer',
+        path: '/offer',
         last: false,
         subCategories: null,
       },

@@ -1,0 +1,65 @@
+<section class="offer">
+  <div class="offer__nav wrapper">
+    <button
+      class="offer__nav__button btn-reset"
+      *ngFor="let offer of offers"
+      (click)="activateTab(offer)"
+    >
+      {{ offer.title }}
+    </button>
+  </div>
+
+  <div class="offer__background visible" 
+  [ngStyle]="currentPhoto"
+  >
+    <div class="offer__background__overlay">
+      <div
+        class="offer__background__overlay__offers wrapper"
+        (mousedown)="mouseDown($event)"
+        (mouseup)="mouseUp()"
+        (mousemove)="mouseMove($event)"
+        (mouseleave)="mouseUp()"
+      >
+        <div
+          class="offer__background__overlay__offers__offer"
+          *ngFor="let offer of offers"
+          [ngClass]="{ visible: offer.visible }"
+        >
+          <div
+            class="offer__background__overlay__offers__offer__img"
+            [style.background-image]="'url(' + offer.image + ')'"
+          ></div>
+          <div
+            class="offer__background__overlay__offers__offer__text-box non-selectable"
+          >
+            <div
+              class="offer__background__overlay__offers__offer__text-box__title"
+            >
+              {{ offer.title }}
+            </div>
+            <div
+              class="offer__background__overlay__offers__offer__text-box__paragraph"
+            >
+              {{ offer.paragraphMobile }}
+            </div>
+            <div
+              class="offer__background__overlay__offers__offer__text-box__paragraph-desktop" *ngFor = "let paragraph of offer.paragraphDesktop"
+            >
+              {{ paragraph }}
+            </div>
+            <button
+              class="offer__background__overlay__offers__offer__text-box__btn btn-reset btn-black"
+            >
+              SPRAWDŹ OFERTĘ
+            </button>
+            <button
+              class="offer__background__overlay__offers__offer__text-box__btn-long btn-reset btn-black"
+            >
+              SPRAWDŹ OFERTĘ {{ offer.buttonText }}
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

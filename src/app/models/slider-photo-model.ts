@@ -16,39 +16,33 @@ export const SLIDER_PHOTOS: SliderPhotoModel[] = [
     alt: 'Młoda para całująca się w otoczeniu drzew.',
   },
   {
-    image: 'assets/img/slide-3.jpg',
+    image: 'assets/img/slide-2.jpg',
     title: 'Fotografia Weselna',
     subtitle: 'Szczere i autentyczne zdjęcia będą pamiątką na lata.',
     alt: 'Tańcząca para młoda.',
   },
   {
-    image: 'assets/img/slide-2.webp',
+    image: 'assets/img/slide-3.webp',
     title: 'Profesjonalny Reportaż Ślubny',
     subtitle: 'Wyjątkowe zdjęcia z najważniejszych chwil w Waszym życiu.',
     alt: 'Pan młody trzymający pannę młodą w wodzie.',
   },
   {
-    image: 'assets/img/slide-9.jpg',
+    image: 'assets/img/slide-4.jpg',
     title: 'Fotografia Weselna',
     subtitle: 'Szczere i autentyczne zdjęcia będą pamiątką na lata.',
     alt: 'Tańcząca para młoda.',
   },
   {
-    image: 'assets/img/slide-10.jpg',
+    image: 'assets/img/slide-5.jpg',
     title: 'Fotografia Weselna',
     subtitle: 'Szczere i autentyczne zdjęcia będą pamiątką na lata.',
     alt: 'Tańcząca para młoda.',
   },
   {
-    image: 'assets/img/slide-11.jpg',
+    image: 'assets/img/slide-6.jpg',
     title: 'Fotografia Weselna',
     subtitle: 'Szczere i autentyczne zdjęcia będą pamiątką na lata.',
     alt: 'Tańcząca para młoda.',
-  },
-  // {
-  //   image: 'assets/img/slide-14.jpg',
-  //   title: 'Fotografia Weselna',
-  //   subtitle: 'Szczere i autentyczne zdjęcia będą pamiątką na lata.',
-  //   alt: 'Tańcząca para młoda.',
-  // },
+  }
 ];

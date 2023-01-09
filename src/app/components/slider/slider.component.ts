@@ -56,19 +56,6 @@ export class SliderComponent implements AfterViewInit {
     }
   }
 
-  // changePhoto(index: number) {
-  //   for (let i = 1; i <= this.numberOfPhotos; i++) {
-  //     if (index === i) {
-  //       this.slides[i - 1].classList.add('visible');
-  //       this.slides[i - 1].style.zIndex = '1';
-  //     } else {
-  //       this.slides[i - 1].classList.remove('visible');
-  //       this.slides[i - 1].style.zIndex = '0';
-  //     }
-  //   }
-  //   console.log(this.slides);
-  // }
-
   ngAfterViewInit(): void {
     this.slides = this.elem.nativeElement.querySelectorAll(
       '.slideshow-container__slides__slide'

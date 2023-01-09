@@ -8,7 +8,7 @@
 
   &__contact-box {
     padding-bottom: 6rem;
-    font-size: 1.4rem;
+    font-size: 1.5rem;
     &__title {
       padding-bottom: 2rem;
       font-size: 2rem;
@@ -26,7 +26,7 @@
         padding-left: 3rem;
         padding-bottom: 0.3rem;
         text-decoration: none;
-        color: #fff;
+        color: rgb(232, 232, 232);
         transition: color 0.3s;
       }
       &:hover &__text,
@@ -46,7 +46,7 @@
         padding-left: 3rem;
         padding-bottom: 0.3rem;
         text-decoration: none;
-        color: #fff;
+        color: rgb(232, 232, 232);
         transition: color 0.3s;
       }
       &:hover &__text,
@@ -57,7 +57,7 @@
   }
   &__social-box {
     padding-bottom: 6rem;
-    font-size: 1.4rem;
+    font-size: 1.5rem;
     &__title {
       padding-bottom: 2rem;
       font-size: 2rem;
@@ -67,7 +67,7 @@
       align-items: center;
       padding-bottom: 3rem;
       text-decoration: none;
-      color: #fff;
+      //color: #fff;
       cursor: pointer;
       transition: color 0.3s;
       &__icon {
@@ -77,8 +77,9 @@
       &__text {
         padding-left: 3rem;
         padding-bottom: 0.3rem;
+        color: rgb(232, 232, 232);
       }
-      &:hover,
+      &:hover &__text,
       &:hover &__icon {
         color: rgb(162, 162, 162);
       }
@@ -98,8 +99,9 @@
       &__text {
         padding-left: 3rem;
         padding-bottom: 0.3rem;
+        color: rgb(232, 232, 232);
       }
-      &:hover,
+      &:hover &__text,
       &:hover &__icon {
         color: rgb(162, 162, 162);
       }
@@ -116,6 +118,7 @@
     }
     &__copyright {
       text-align: center;
+      color: #9c9c9c;
     }
   }
 }
@@ -153,11 +156,17 @@
       padding: 0 2rem;
       order: 3;
       width: 33.3%;
+      &__title {
+        font-size: 2.2rem;
+      }
     }
     &__social-box {
       padding: 0 2rem;
       order: 2;
       width: 33.3%;
+      &__title {
+        font-size: 2.2rem;
+      }
     }
     &__logo-box {
       order: 1;
@@ -173,9 +182,15 @@
     padding: 10rem 0;
     &__contact-box {
       padding: 0 3rem;
+      &__title {
+        font-size: 2.4rem;
+      }
     }
     &__social-box {
       padding: 0 3rem;
+      &__title {
+        font-size: 2.48rem;
+      }
     }
   }
 }
