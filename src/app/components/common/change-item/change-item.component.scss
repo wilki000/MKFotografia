@@ -1,0 +1,142 @@
+.right {
+  right: 0;
+}
+.center {
+  left: 50%;
+  transform: translate(-50%, 0);
+}
+.left {
+  left: 0;
+}
+.change-item {
+  position: absolute;
+  bottom: 0;
+  display: flex;
+  justify-content: space-between;
+  padding-left: 3rem;
+  padding-right: 3rem;
+  height: 60px;
+  width: 100%;
+  max-width: 450px;
+  z-index: 888;
+  color: #fff;
+
+  .btn {
+    transition: transform 0.35s;
+    cursor: pointer;
+    defs {
+      style {
+        width: 80px;
+        height: 61px;
+      }
+    }
+    &:hover {
+      transform: scale(1.05);
+    }
+  }
+
+  &__button-left {
+    padding-right: 2rem;
+  }
+
+  &__button-right {
+    padding-left: 2rem;
+  }
+
+  .number {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 60px;
+    width: 40px;
+    font-size: 1.6rem;
+    font-weight: 700;
+  }
+  &__slash {
+    height: 40px;
+    border-right: 1.5px solid;
+    transform: rotate(30deg);
+    margin: auto 2rem;
+  }
+}
+
+@media (min-width: 576px) {
+  .change-item {
+    height: 75px;
+    &__button-left {
+      padding-right: 2.75rem;
+    }
+    &__button-right {
+      padding-left: 2.75rem;
+    }
+    .number {
+      height: 75px;
+    }
+    &__slash {
+      height: 45px;
+    }
+  }
+}
+
+@media (min-width: 768px) {
+  .change-item {
+    height: 90px;
+    &__button-left {
+      padding-right: 3.5rem;
+    }
+    &__button-right {
+      padding-left: 3.5rem;
+    }
+    .number {
+      height: 90px;
+    }
+    &__slash {
+      height: 50px;
+    }
+  }
+}
+
+@media (min-width: 992px) {
+  .change-item {
+    height: 105px;
+    &__button-left {
+      padding-right: 4.25rem;
+    }
+    &__button-right {
+      padding-left: 4.25rem;
+    }
+    .number {
+      height: 105px;
+    }
+    &__slash {
+      height: 55px;
+    }
+  }
+}
+
+@media (min-width: 1200px) {
+  .change-item {
+    height: 120px;
+
+    &__button-left {
+      padding-right: 5rem;
+    }
+    &__button-right {
+      padding-left: 5rem;
+    }
+
+    .number {
+      height: 120px;
+    }
+    &__slash {
+      height: 60px;
+    }
+  }
+}
+
+@media (min-width: 1400px) {
+  .change-item {
+    padding-left: 0;
+    padding-right: 0;
+  }
+}
