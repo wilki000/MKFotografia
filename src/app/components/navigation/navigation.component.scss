@@ -122,14 +122,11 @@ nav {
   }
 
   .navbar {
-    background-color: transparent; 
+    background-color: transparent;
     padding-left: 3rem;
     padding-right: 3rem;
     &__nav-box {
       height: 90px;
-
-
-      //dodatkowy kod
       margin: 0 auto;
       padding: 0;
       max-width: 100%;

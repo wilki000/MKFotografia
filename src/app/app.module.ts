@@ -16,6 +16,7 @@ import { NavItemComponent } from './components/navigation/nav-item/nav-item.comp
 import { SliderComponent } from './components/slider/slider.component';
 import { ChangeItemComponent } from './components/common/change-item/change-item.component';
 import { OfferComponent } from './components/offer/offer.component';
+import { BlogComponent } from './components/blog/blog.component';
 
 @NgModule({
   declarations: [
@@ -32,6 +33,7 @@ import { OfferComponent } from './components/offer/offer.component';
     SliderComponent,
     ChangeItemComponent,
     OfferComponent,
+    BlogComponent,
   ],
   imports: [BrowserModule, AppRoutingModule, IconModule],
   providers: [],

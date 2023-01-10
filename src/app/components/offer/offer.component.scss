@@ -18,7 +18,7 @@
           min-width: 280px;
           height: 430px;
           margin-left: 1.5rem;
-          background-color: #f1f1f1;
+          background-color: #f4f4f4;
           &:last-child {
             margin-right: 1.5rem;
           }
@@ -190,7 +190,6 @@
             }
           }
           .visible {
-            //display: flex;
             visibility: visible;
             opacity: 1;
           }

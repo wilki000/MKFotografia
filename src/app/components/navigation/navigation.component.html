@@ -5,36 +5,33 @@
     id="navbar"
     [ngClass]="scrollPosition + 90 > screenHeight ? 'bgc' : 'transparent'"
   >
-    <!-- <div class="wrapper"> -->
-      <div class="navbar">
-        <div class="navbar__nav-box">
-          <input
-            class="navbar__nav-box__checkbox"
-            type="checkbox"
-            name=""
-            id=""
-            (click)="toggleScroll()"
+    <div class="navbar">
+      <div class="navbar__nav-box">
+        <input
+          class="navbar__nav-box__checkbox"
+          type="checkbox"
+          name=""
+          id=""
+          (click)="toggleScroll()"
+        />
+        <div class="navbar__nav-box__hamburger-lines">
+          <span class="navbar__nav-box__hamburger-lines__line line1"></span>
+          <span class="navbar__nav-box__hamburger-lines__line line2"></span>
+          <span class="navbar__nav-box__hamburger-lines__line line3"></span>
+        </div>
+        <div class="navbar__nav-box__logo">
+          <img
+            src="/assets/img/logo-white.svg"
+            alt="MK logo Fotografia Ślubna"
           />
-          <div class="navbar__nav-box__hamburger-lines">
-            <span class="navbar__nav-box__hamburger-lines__line line1"></span>
-            <span class="navbar__nav-box__hamburger-lines__line line2"></span>
-            <span class="navbar__nav-box__hamburger-lines__line line3"></span>
-          </div>
-          <div class="navbar__nav-box__logo">
-            <img
-              src="/assets/img/logo-white.svg"
-              alt="MK logo Fotografia Ślubna"
-            />
-          </div>
-          <div class="navbar__nav-box__menu-items">
-            <app-nav-item
-              *ngFor="let category of categories"
-              [mainCategory]="category"
-            ></app-nav-item>
-          </div>
+        </div>
+        <div class="navbar__nav-box__menu-items">
+          <app-nav-item
+            *ngFor="let category of categories"
+            [mainCategory]="category"
+          ></app-nav-item>
         </div>
       </div>
-    <!-- </div> -->
+    </div>
   </div>
 </nav>
-
