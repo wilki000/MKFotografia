@@ -1,0 +1,25 @@
+<section class="qa wrapper">
+  <app-title>Warto wiedzieć</app-title>
+  <p class="qa__p-1">
+    Znajdziesz tu najczęściej zadawane pytania i odpowiedzi.
+  </p>
+  <p class="qa__p-2">
+    Jeżeli nie ma tutaj tego czego szukasz, napisz do mnie. Dane kontaktowe
+    znajdziesz w zakładce <b routerLink="/contact">KONTAKT</b>.
+  </p>
+  <div class="qa__box" *ngFor="let qa of qaCollection">
+    <div (click)="toggleVisible($event, qa)" class="qa__box__question">
+      <p class="qa__box__question__paragraph">{{ qa.question }}</p>
+      <svg
+        class="qa__box__question__plus"
+        preserveAspectRatio="xMidYMid meet"
+        viewBox="0 0 24 24"
+      >
+        <path [attr.d]="qa.expanded ? icons[1] : icons[0]" />
+      </svg>
+    </div>
+    <div class="qa__box__answer">
+      <p class="qa__box__answer__paragraph">{{ qa.answer }}</p>
+    </div>
+  </div>
+</section>

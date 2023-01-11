@@ -30,7 +30,7 @@ nav {
     display: block;
     height: 60px;
 
-    input[type="checkbox"]:checked {
+    input[type="checkbox"].has-checked:checked {
       & ~ .navbar__nav-box__menu-items {
         transform: translateX(0);
       }

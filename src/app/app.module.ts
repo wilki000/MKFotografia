@@ -7,7 +7,6 @@ import { HomePageComponent } from './pages/home-page/home-page.component';
 import { TitleComponent } from './components/title/title.component';
 import { IntroductionComponent } from './components/introduction/introduction.component';
 import { InfoComponent } from './components/info/info.component';
-import { IconModule } from '@visurel/iconify-angular';
 import { SpecialPhotoComponent } from './components/special-photo/special-photo.component';
 import { DoubtComponent } from './components/doubt/doubt.component';
 import { FooterComponent } from './components/footer/footer.component';
@@ -17,6 +16,7 @@ import { SliderComponent } from './components/slider/slider.component';
 import { ChangeItemComponent } from './components/common/change-item/change-item.component';
 import { OfferComponent } from './components/offer/offer.component';
 import { BlogComponent } from './components/blog/blog.component';
+import { QaPageComponent } from './pages/qa-page/qa-page.component';
 
 @NgModule({
   declarations: [
@@ -34,8 +34,9 @@ import { BlogComponent } from './components/blog/blog.component';
     ChangeItemComponent,
     OfferComponent,
     BlogComponent,
+    QaPageComponent,
   ],
-  imports: [BrowserModule, AppRoutingModule, IconModule],
+  imports: [BrowserModule, AppRoutingModule],
   providers: [],
   bootstrap: [AppComponent],
 })
