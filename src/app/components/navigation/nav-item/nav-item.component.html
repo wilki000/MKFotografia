@@ -1,12 +1,18 @@
 <li [ngClass]="{ last: mainCategory.last }">
-  <div *ngIf="hasSubcategories == false; else subcategories">
-    <a class="category" routerLink="{{ mainCategory.path }}"
+  <div
+    *ngIf="hasSubcategories == false; else subcategories"
+    class="{{ currentStyle }}"
+  >
+    <a
+      class="category"
+      routerLink="{{ mainCategory.path }}"
+      (click)="emitRouteEvent()"
       >{{ mainCategory.displayName }}
     </a>
   </div>
   <ng-template #subcategories>
     <a
-      class="category"
+      class="{{ currentStyle }} category"
       (click)="toggleClickSubcategories()"
       (mouseleave)="removeClick()"
       >{{ mainCategory.displayName }}
@@ -26,9 +32,12 @@
 
   <ul class="subcategory hidden" *ngIf="hasSubcategories">
     <li *ngFor="let subCategory of mainCategory.subCategories">
-      <a class="subcategory__item" routerLink="{{ subCategory.path }}">{{
-        subCategory.displayName
-      }}</a>
+      <a
+        class="subcategory__item"
+        routerLink="{{ subCategory.path }}"
+        (click)="emitRouteEvent()"
+        >{{ subCategory.displayName }}</a
+      >
     </li>
   </ul>
 </li>

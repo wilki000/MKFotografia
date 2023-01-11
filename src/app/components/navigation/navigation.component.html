@@ -1,17 +1,16 @@
 <!-- <nav class="sticky bgc"> -->
-<nav>
+<nav class="{{ currentStyle }}">
   <div
     class="sticky visible"
     id="navbar"
     [ngClass]="scrollPosition + 90 > screenHeight ? 'bgc' : 'transparent'"
-  >
-    <div class="navbar">
+    >
+    <div #navbar class="navbar">
       <div class="navbar__nav-box">
         <input
-          class="navbar__nav-box__checkbox"
+          #checkbox
+          class="navbar__nav-box__checkbox has-checked"
           type="checkbox"
-          name=""
-          id=""
           (click)="toggleScroll()"
         />
         <div class="navbar__nav-box__hamburger-lines">
@@ -29,6 +28,7 @@
           <app-nav-item
             *ngFor="let category of categories"
             [mainCategory]="category"
+            (routeEvent)="restartCheckedState()"
           ></app-nav-item>
         </div>
       </div>

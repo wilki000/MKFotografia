@@ -2,19 +2,27 @@ import {
   AfterViewInit,
   Component,
   ElementRef,
+  OnDestroy,
   EventEmitter,
   Input,
   Output,
   Renderer2,
 } from '@angular/core';
-import { interval, NEVER, Observable, Subject, switchMap } from 'rxjs';
+import {
+  interval,
+  NEVER,
+  Observable,
+  Subject,
+  Subscription,
+  switchMap,
+} from 'rxjs';
 
 @Component({
   selector: 'app-change-item',
   templateUrl: './change-item.component.html',
   styleUrls: ['./change-item.component.scss'],
 })
-export class ChangeItemComponent implements AfterViewInit {
+export class ChangeItemComponent implements AfterViewInit, OnDestroy {
   @Input() align: string | null = null;
   @Input() lastItemIndex!: number;
   @Input() delay: number | undefined = undefined;
@@ -22,6 +30,7 @@ export class ChangeItemComponent implements AfterViewInit {
   currentItemIndex: number = 1;
   private timerController: Subject<boolean> = new Subject();
   private timer!: Observable<number>;
+  private timerSubscription!: Subscription;
 
   constructor(private renderer: Renderer2, private elem: ElementRef) {}
 
@@ -72,8 +81,16 @@ export class ChangeItemComponent implements AfterViewInit {
       this.timer = this.timerController.pipe(
         switchMap((e) => (e ? interval(this.delay) : NEVER))
       );
-      this.timer.subscribe((e) => this.incrementIndex());
+      this.timerSubscription = this.timer.subscribe((e) =>
+        this.incrementIndex()
+      );
       this.timerController.next(true);
+    }
+  }
+  ngOnDestroy() {
+    if (this.delay != undefined) {
+      this.timerController.unsubscribe();
+      this.timerSubscription.unsubscribe();
     }
   }
 }

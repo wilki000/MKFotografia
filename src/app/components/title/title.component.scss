@@ -9,7 +9,7 @@
 
   &__line {
     height: 2px;
-    width: 45px;
+    width: 30px;
     background-color: #333333;
   }
   &__text {
@@ -23,6 +23,9 @@
 @media (min-width: 576px) {
   .container {
     padding-top: 8rem;
+    &__line {
+      width: 40px;
+    }
     &__text {
       font-size: 4rem;
     }
@@ -31,6 +34,9 @@
 @media (min-width: 768px) {
   .container {
     padding-top: 9rem;
+    &__line {
+      width: 50px;
+    }
     &__text {
       padding: 0 1.7rem;
       font-size: 4.4rem;
@@ -40,6 +46,9 @@
 @media (min-width: 992px) {
   .container {
     padding-top: 10rem;
+    &__line {
+      width: 60px;
+    }
     &__text {
       padding: 0 1.9rem;
       font-size: 4.8rem;
@@ -49,6 +58,9 @@
 @media (min-width: 1200px) {
   .container {
     padding-top: 11rem;
+    &__line {
+      width: 70px;
+    }
     &__text {
       padding: 0 2rem;
       font-size: 5.2rem;

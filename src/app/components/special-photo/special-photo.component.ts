@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-import cardsHeart from '@iconify/icons-mdi/cards-heart';
 
 @Component({
   selector: 'app-special-photo',
@@ -7,5 +6,4 @@ import cardsHeart from '@iconify/icons-mdi/cards-heart';
   styleUrls: ['./special-photo.component.scss']
 })
 export class SpecialPhotoComponent {
-  heartIcon = cardsHeart;
 }
