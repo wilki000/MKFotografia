@@ -5,6 +5,7 @@ import {
   OnInit,
   OnDestroy,
   ViewChild,
+  ViewChildren,
 } from '@angular/core';
 import { ActivatedRoute, NavigationEnd, Router } from '@angular/router';
 import { NavItemModel, CATEGORIES } from '@models/nav-item-model';
@@ -17,7 +18,7 @@ import { filter, map, Subscription, switchMap } from 'rxjs';
 })
 export class NavigationComponent implements OnInit, OnDestroy {
   @ViewChild('checkbox') checkbox!: ElementRef;
-  @ViewChild('navbar') navbar!: ElementRef;
+  @ViewChildren('navbar') navbar!: ElementRef[];
   categories: NavItemModel[];
   scrollPosition: number = 0;
   styleSubscription!: Subscription;
@@ -38,11 +39,15 @@ export class NavigationComponent implements OnInit, OnDestroy {
     const oldPosition = this.scrollPosition;
     this.scrollPosition = window.pageYOffset;
     if (oldPosition < this.scrollPosition) {
-      this.navbar.nativeElement.classList.remove('visible');
-      this.navbar.nativeElement.classList.add('hidden');
+      this.navbar.forEach((e) => {
+        e.nativeElement.classList.remove('visible');
+        e.nativeElement.classList.add('hidden');
+      });
     } else {
-      this.navbar.nativeElement.classList.remove('hidden');
-      this.navbar.nativeElement.classList.add('visible');
+      this.navbar.forEach((e) => {
+        e.nativeElement.classList.remove('hidden');
+        e.nativeElement.classList.add('visible');
+      });
     }
   }
 
@@ -52,6 +57,14 @@ export class NavigationComponent implements OnInit, OnDestroy {
   }
   toggleScroll() {
     document.querySelector('body')?.classList.toggle('noscroll');
+  }
+
+  shouldShowNavBackground() {
+    if (this.currentStyle === 'white') {
+      return this.scrollPosition + 90 > this.screenHeight;
+    } else {
+      return this.scrollPosition > 90;
+    }
   }
 
   ngOnInit() {

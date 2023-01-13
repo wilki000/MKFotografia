@@ -83,29 +83,14 @@ li {
       position: absolute;
     }
     &.last {
-      .black a {
-        //last button - black theme
-        background-color: #333;
-        color: #fff;
-      }
       a {
         background-color: #fff;
         color: #333;
-        .black &:hover {
-          //last button - black theme
-          background-color: #fff;
-          color: #333;
-        }
         &:hover {
           background-color: #333;
           color: #fff;
         }
       }
-    }
-    .black.category,
-    .black .category {
-      //all buttons - black theme
-      color: #333;
     }
     .category {
       padding: 1.5rem 3rem;
@@ -113,31 +98,14 @@ li {
       color: #fff;
       border-bottom: none;
       transition: color 0.3s, background-color 0.3s;
-      &.black {
-        .svg {
-          & path {
-            //dropdown icon - black theme
-            fill: #333;
-          }
-        }
-      }
       .svg {
         & path {
           fill: #fff;
         }
       }
-      &:hover.black {
-        //all buttons:hover - black theme
-        color: #fff;
-        background-color: #333;
-      }
       &:hover {
         color: #333;
         background-color: #fff;
-      }
-      &:hover.black > .svg > path {
-        //svg:hover - black theme
-        fill: #fff;
       }
       &:hover > .svg > path {
         fill: #333;
@@ -177,5 +145,56 @@ li {
         fill: #333;
       }
     }
+  }
+  .black li {
+    &.last {
+      a {
+        //last button - black theme
+        background-color: #333;
+        color: #fff;
+        &:hover {
+          //last button - black theme
+          background-color: #fff;
+          color: #333;
+        }
+      }
+    }
+    .category {
+      color: #333;
+      .svg {
+        & path {
+          //dropdown icon - black theme
+          fill: #333;
+        }
+      }
+
+      &:hover {
+        //all buttons:hover - black theme
+        color: #fff;
+        background-color: #333;
+      }
+      &:hover > .svg > path {
+        //svg:hover - black theme
+        fill: #fff;
+      }
+    }
+
+    // .subcategory {
+    //   &__item {
+    //     &:hover {
+    //       color: #333;
+    //       background-color: #fff;
+    //     }
+    //   }
+    // }
+
+    // .category:has(~ .subcategory:hover) {
+    //   color: #333;
+    //   background-color: #fff;
+    //   fill: #333;
+    //   .svg > path {
+    //     fill: #333;
+    //   }
+    // }
   }
 }

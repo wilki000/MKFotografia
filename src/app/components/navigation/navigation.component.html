@@ -1,10 +1,11 @@
 <!-- <nav class="sticky bgc"> -->
 <nav class="{{ currentStyle }}">
   <div
+    #navbar
     class="sticky visible"
     id="navbar"
-    [ngClass]="scrollPosition + 90 > screenHeight ? 'bgc' : 'transparent'"
-    >
+    [ngClass]="shouldShowNavBackground() ? 'bgc' : 'transparent'"
+  >
     <div #navbar class="navbar">
       <div class="navbar__nav-box">
         <input
@@ -20,7 +21,7 @@
         </div>
         <div class="navbar__nav-box__logo">
           <img
-            src="/assets/img/logo-white.svg"
+            src="/assets/img/logo-{{ currentStyle }}.svg"
             alt="MK logo Fotografia Ślubna"
           />
         </div>

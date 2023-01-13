@@ -17,6 +17,10 @@ import { ChangeItemComponent } from './components/common/change-item/change-item
 import { OfferComponent } from './components/offer/offer.component';
 import { BlogComponent } from './components/blog/blog.component';
 import { QaPageComponent } from './pages/qa-page/qa-page.component';
+import { PortfolioPageComponent } from './pages/portfolio-page/portfolio-page.component';
+import { DisplayPhotoComponent } from './components/display-photo/display-photo.component';
+import { ContactComponent } from './pages/contact/contact.component';
+import { PageNotFoundComponent } from './pages/page-not-found/page-not-found.component';
 
 @NgModule({
   declarations: [
@@ -35,6 +39,10 @@ import { QaPageComponent } from './pages/qa-page/qa-page.component';
     OfferComponent,
     BlogComponent,
     QaPageComponent,
+    PortfolioPageComponent,
+    DisplayPhotoComponent,
+    ContactComponent,
+    PageNotFoundComponent,
   ],
   imports: [BrowserModule, AppRoutingModule],
   providers: [],

@@ -1,0 +1,16 @@
+<section class="portfolio wrapper">
+  <app-title>Portfolio</app-title>
+  <div class="portfolio__grid">
+    <div class="portfolio__grid__box" *ngFor="let picture of pictures">
+      <div
+        class="portfolio__grid__box__picture"
+        [style.background-image]="'url(' + picture.image + ')'"
+      ></div>
+    </div>
+  </div>
+  <p class="portfolio__paragraph">
+    Aby zobaczyć więcej moich zdjęć sprawdź <b>pełną ofertę</b> i wybierz tą,
+    która Cię interesuje.
+  </p>
+  <button class=" portfolio__btn btn-reset btn-black">PEŁNA OFERTA</button>
+</section>

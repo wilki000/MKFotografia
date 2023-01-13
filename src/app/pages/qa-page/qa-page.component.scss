@@ -12,6 +12,13 @@
   }
   &__p-2 {
     padding-bottom: 3rem;
+    b {
+      text-decoration: underline;
+      cursor: pointer;
+      &:hover {
+        color: #696969;
+      }
+    }
   }
   &__box {
     margin-left: auto;

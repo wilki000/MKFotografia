@@ -95,6 +95,11 @@ nav {
       width: 60px;
       height: 60px;
       font-size: 1.2rem;
+      img {
+        svg .cls-6 {
+          fill: tomato;
+        }
+      }
     }
     &__menu-items {
       display: flex;
@@ -119,6 +124,14 @@ nav {
   .bgc {
     background-color: rgba(41, 41, 41, 0.85);
     transition: background-color linear 0.3s;
+  }
+  nav.black {
+    .transparent {
+      background-color: rgba(255, 255, 255, 0);
+    }
+    .bgc {
+      background-color: rgba(255, 255, 255, 0.85);
+    }
   }
 
   .navbar {
