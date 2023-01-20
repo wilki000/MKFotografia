@@ -1,23 +1,23 @@
 <section class="slideshow-container">
-  <div class="slideshow-container__slides">
+  <div class="slides">
     <div
-      class="slideshow-container__slides__slide"
+      class="slide"
       *ngFor="let photo of sliderPhotos; let first = first"
       [ngStyle]="photo.photoStyle"
     >
-      <div class="slideshow-container__slides__slide__photo-box">
+      <div class="photo-box">
         <div
-          class="slideshow-container__slides__slide__photo-box__image"
+          class="image"
           [style.background-image]="'url(' + photo.image + ')'"
           title="{{ photo.alt }}"
         ></div>
         <div
-          class="slideshow-container__slides__slide__photo-box__overlay"
+          class="overlay"
         ></div>
       </div>
-      <div class="slideshow-container__slides__slide__bottom-box wrapper">
+      <div class="bottom-box wrapper">
         <div
-          class="slideshow-container__slides__slide__bottom-box__text-box"
+          class="text-box"
           [ngStyle]="photo.textStyle"
         >
           <h1>{{ photo.title }}</h1>
@@ -25,7 +25,7 @@
             {{ photo.subtitle }}
           </p>
         </div>
-        <div class="slideshow-container__slides__slide__bottom-box__line"></div>
+        <div class="line"></div>
       </div>
     </div>
   </div>

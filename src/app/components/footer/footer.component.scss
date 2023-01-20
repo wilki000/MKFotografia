@@ -11,116 +11,118 @@
     height: 3.6rem;
     fill: #fff;
   }
-  &__contact-box {
+  .contact-box {
     padding-bottom: 6rem;
     font-size: 1.5rem;
-    &__title {
+    .title {
       padding-bottom: 2rem;
       font-size: 2rem;
     }
-    &__phone {
+    .phone {
       display: flex;
       align-items: center;
       padding-bottom: 3rem;
       cursor: pointer;
-      &__icon {
+      .icon {
         color: #fff;
         transition: color 0.3s;
       }
-      &__text {
+      .text {
         padding-left: 3rem;
         padding-bottom: 0.3rem;
         text-decoration: none;
         color: rgb(232, 232, 232);
         transition: color 0.3s;
       }
-      &:hover &__text,
-      &:hover &__icon {
+      &:hover .text,
+      &:hover .icon {
         color: rgb(162, 162, 162);
       }
     }
-    &__e-mail {
+    .e-mail {
       display: flex;
       align-items: center;
       cursor: pointer;
-      &__icon {
+      .icon {
         color: #fff;
         transition: color 0.3s;
       }
-      &__text {
+      .text {
+        display: inline-block;
+        word-break: break-word;
         padding-left: 3rem;
         padding-bottom: 0.3rem;
         text-decoration: none;
         color: rgb(232, 232, 232);
         transition: color 0.3s;
       }
-      &:hover &__text,
-      &:hover &__icon {
+      &:hover .text,
+      &:hover .icon {
         color: rgb(162, 162, 162);
       }
     }
   }
-  &__social-box {
+  .social-box {
     padding-bottom: 6rem;
     font-size: 1.5rem;
-    &__title {
+    .title {
       padding-bottom: 2rem;
       font-size: 2rem;
     }
-    &__fb {
+    .fb {
       display: flex;
       align-items: center;
       padding-bottom: 3rem;
       text-decoration: none;
       cursor: pointer;
       transition: color 0.3s;
-      &__icon {
+      .icon {
         color: #fff;
         transition: color 0.3s;
       }
-      &__text {
+      .text {
         padding-left: 3rem;
         padding-bottom: 0.3rem;
         color: rgb(232, 232, 232);
       }
-      &:hover &__text,
-      &:hover &__icon {
+      &:hover .text,
+      &:hover .icon {
         color: rgb(162, 162, 162);
       }
     }
 
-    &__inst {
+    .inst {
       display: flex;
       align-items: center;
       text-decoration: none;
       color: #fff;
       cursor: pointer;
       transition: color 0.3s;
-      &__icon {
+      .icon {
         color: #fff;
         transition: color 0.3s;
       }
-      &__text {
+      .text {
         padding-left: 3rem;
         padding-bottom: 0.3rem;
         color: rgb(232, 232, 232);
       }
-      &:hover &__text,
-      &:hover &__icon {
+      &:hover .text,
+      &:hover .icon {
         color: rgb(162, 162, 162);
       }
     }
   }
 
-  &__logo-box {
+  .logo-box {
     display: flex;
     flex-direction: column;
     align-items: center;
-    &__logo {
+    .logo {
       padding-bottom: 1rem;
       width: 120px;
     }
-    &__copyright {
+    .copyright {
       text-align: center;
       color: #9c9c9c;
     }
@@ -138,15 +140,15 @@
     display: flex;
     flex-wrap: wrap;
     padding: 6rem 4rem;
-    &__contact-box {
+    .contact-box {
       padding: 0 3rem;
       width: 50%;
     }
-    &__social-box {
+    .social-box {
       padding: 0 3rem;
       width: 50%;
     }
-    &__logo-box {
+    .logo-box {
       padding-top: 8rem;
       width: 100vw;
     }
@@ -156,23 +158,23 @@
 @media (min-width: 992px) {
   .container {
     padding: 8rem 0;
-    &__contact-box {
+    .contact-box {
       padding: 0 2rem;
       order: 3;
       width: 33.3%;
-      &__title {
+      .title {
         font-size: 2.2rem;
       }
     }
-    &__social-box {
+    .social-box {
       padding: 0 2rem;
       order: 2;
       width: 33.3%;
-      &__title {
+      .title {
         font-size: 2.2rem;
       }
     }
-    &__logo-box {
+    .logo-box {
       order: 1;
       margin: auto;
       padding-top: 0;
@@ -184,15 +186,15 @@
 @media (min-width: 1200px) {
   .container {
     padding: 10rem 0;
-    &__contact-box {
+    .contact-box {
       padding: 0 3rem;
-      &__title {
+      .title {
         font-size: 2.4rem;
       }
     }
-    &__social-box {
+    .social-box {
       padding: 0 3rem;
-      &__title {
+      .title {
         font-size: 2.48rem;
       }
     }

@@ -19,7 +19,7 @@
 
 html {
   font-size: 62.5%; // font-size 10px
-  scroll-behavior: smooth;
+  scroll-behavior: auto;
 }
 
 body {
@@ -70,16 +70,15 @@ body {
 }
 
 //do usunięcia
-@media (min-width: 768px) {
-  .black-btn {
-    height: 55px;
-  }
-}
+// @media (min-width: 768px) {
+//   .black-btn {
+//     height: 55px;
+//   }
+// }
 
-@media (min-width: 1200px) {
-  .black-btn {
-    height: 60px;
-    font-size: 1.6rem;
-    background-color: rgb(185, 49, 49) !important;
-  }
-}
+// @media (min-width: 1200px) {
+//   .black-btn {
+//     height: 60px;
+//     font-size: 1.6rem;
+//   }
+// }

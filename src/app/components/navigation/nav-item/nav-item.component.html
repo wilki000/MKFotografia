@@ -31,7 +31,7 @@
     <ul class="subcategory hidden" *ngIf="hasSubcategories">
       <li *ngFor="let subCategory of mainCategory.subCategories">
         <a
-          class="subcategory__item"
+          class="item"
           routerLink="{{ subCategory.path }}"
           (click)="emitRouteEvent()"
           >{{ subCategory.displayName }}</a

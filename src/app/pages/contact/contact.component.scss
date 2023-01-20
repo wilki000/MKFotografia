@@ -3,7 +3,7 @@
 .contact {
   padding-left: 1.5rem;
   padding-right: 1.5rem;
-  &__img {
+  .img {
     margin-top: 1rem;
     max-width: 100%;
     height: 200px;
@@ -11,7 +11,7 @@
     background-size: cover;
     background-position: center;
   }
-  &__text-box {
+  .text-box {
     text-align: center;
     overflow-wrap: break-word;
     .icon {
@@ -21,19 +21,19 @@
         fill: #333;
       }
     }
-    &__title {
+    .title {
       display: none;
     }
-    &__paragraph {
+    .paragraph {
       padding-top: 1rem;
       padding-bottom: 1rem;
       font-size: 1.6rem;
       color: #727171;
     }
-    &__phone,
-    &__e-mail,
-    &__address,
-    &__fb {
+    .phone,
+    .e-mail,
+    .address,
+    .fb {
       padding-top: 3rem;
       padding-bottom: 3rem;
       border-bottom: 2px solid #d2d1d1;
@@ -46,7 +46,7 @@
 
 @media (min-width: 375px) {
   .contact {
-    &__img {
+    .img {
       height: 230px;
     }
   }
@@ -54,7 +54,7 @@
 
 @media (min-width: 576px) {
   .contact {
-    &__img {
+    .img {
       margin-top: 2rem;
       height: 300px;
     }
@@ -63,7 +63,7 @@
 
 @media (min-width: 768px) {
   .contact {
-    &__img {
+    .img {
       margin-top: 3rem;
       height: 450px;
     }
@@ -79,35 +79,29 @@
     app-title {
       display: none;
     }
-    &__img {
+    .img {
       margin-top: 0;
-      width: 45%;
-      height: 400px;
+      width: 50%;
+      height: 360px;
     }
-    &__line {
-      width: 2px;
-      height: 400px;
-      margin-left: 7rem;
-      margin-right: 7rem;
-      background-color: #333;
-    }
-    &__text-box {
+    .text-box {
+      padding-left: 3rem;
       text-align: left;
-      &__title {
+      .title {
         display: inline-block;
         font-family: $handWritingFont;
         font-size: 4.8rem;
       }
-      &__paragraph {
+      .paragraph {
         padding-top: 0;
-        padding-bottom: 4rem;
+        padding-bottom: 3rem;
         font-size: 1.8rem;
         color: #727171;
       }
-      &__phone,
-      &__e-mail,
-      &__address,
-      &__fb {
+      .phone,
+      .e-mail,
+      .address,
+      .fb {
         display: flex;
         padding-top: 1rem;
         padding-bottom: 1rem;
@@ -123,30 +117,30 @@
 
 @media (min-width: 1200px) {
   .contact {
-    &__img {
-      height: 450px;
+    .img {
+      height: 420px;
+      width: 54%;
     }
-    &__line {
-      height: 450px;
-    }
-    &__text-box {
-      &__title {
+    .text-box {
+      padding-left: 6rem;
+      .title {
         font-size: 5.2rem;
       }
-      &__paragraph {
+      .paragraph {
         padding-top: 0;
-        padding-bottom: 5rem;
+        padding-bottom: 4rem;
       }
-      &__phone,
-      &__e-mail,
-      &__address,
-      &__fb {
+      .phone,
+      .e-mail,
+      .address,
+      .fb {
         display: flex;
         padding-top: 1.5rem;
         padding-bottom: 1.5rem;
         border-bottom: none;
         p {
           padding-left: 3rem;
+          font-size: 1.6rem;
           line-height: 3.6rem;
         }
       }

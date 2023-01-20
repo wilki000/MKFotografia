@@ -27,7 +27,7 @@ export class ChangeItemComponent implements AfterViewInit, OnDestroy {
   @Input() lastItemIndex!: number;
   @Input() delay: number | undefined = undefined;
   @Output() changeItem = new EventEmitter<number>();
-  currentItemIndex: number = 1;
+  public currentItemIndex: number = 1;
   private timerController: Subject<boolean> = new Subject();
   private timer!: Observable<number>;
   private timerSubscription!: Subscription;

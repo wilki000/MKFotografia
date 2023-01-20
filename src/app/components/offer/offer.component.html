@@ -1,7 +1,7 @@
-<section class="offer">
-  <div class="offer__nav wrapper">
+<section class="offer-box">
+  <div class="nav wrapper">
     <button
-      class="offer__nav__button btn-reset"
+      class="button btn-reset"
       *ngFor="let offer of offers"
       (click)="activateTab(offer)"
     >
@@ -9,51 +9,51 @@
     </button>
   </div>
 
-  <div class="offer__background visible" 
+  <div class="background visible" 
   [ngStyle]="currentPhoto"
   >
-    <div class="offer__background__overlay">
+    <div class="overlay">
       <div
-        class="offer__background__overlay__offers wrapper"
+        class="offers wrapper"
         (mousedown)="mouseDown($event)"
         (mouseup)="mouseUp()"
         (mousemove)="mouseMove($event)"
         (mouseleave)="mouseUp()"
       >
         <div
-          class="offer__background__overlay__offers__offer"
+          class="offer"
           *ngFor="let offer of offers"
           [ngClass]="{ visible: offer.visible }"
         >
           <div
-            class="offer__background__overlay__offers__offer__img"
+            class="img"
             [style.background-image]="'url(' + offer.image + ')'"
           ></div>
           <div
-            class="offer__background__overlay__offers__offer__text-box non-selectable"
+            class="text-box non-selectable"
           >
             <div
-              class="offer__background__overlay__offers__offer__text-box__title"
+              class="title"
             >
               {{ offer.title }}
             </div>
             <div
-              class="offer__background__overlay__offers__offer__text-box__paragraph"
+              class="paragraph"
             >
               {{ offer.paragraphMobile }}
             </div>
             <div
-              class="offer__background__overlay__offers__offer__text-box__paragraph-desktop" *ngFor = "let paragraph of offer.paragraphDesktop"
+              class="paragraph-desktop" *ngFor = "let paragraph of offer.paragraphDesktop"
             >
               {{ paragraph }}
             </div>
             <button
-              class="offer__background__overlay__offers__offer__text-box__btn btn-reset btn-black" routerLink="{{ offer.buttonURL }}"
+              class="btn btn-reset btn-black" routerLink="{{ offer.buttonURL }}"
             >
               SPRAWDŹ OFERTĘ
             </button>
             <button
-              class="offer__background__overlay__offers__offer__text-box__btn-long btn-reset btn-black" routerLink="{{ offer.buttonURL }}"
+              class="btn-long btn-reset btn-black" routerLink="{{ offer.buttonURL }}"
             >
               SPRAWDŹ OFERTĘ {{ offer.buttonText }}
             </button>

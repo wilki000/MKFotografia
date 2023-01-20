@@ -1,18 +1,15 @@
 <app-title>Blog</app-title>
 <section class="blog wrapper" [ngClass]="homePage ? 'home-page' : 'blog-page'">
-  <div class="blog__card" *ngFor="let post of posts">
+  <div class="card" *ngFor="let post of posts">
     <div
-      class="blog__card__img"
+      class="img"
       [style.background-image]="'url(' + post.image + ')'"
       title="{{ post.alt }}"
     ></div>
-    <div class="blog__card__text-box">
-      <div class="blog__card__text-box__title">{{ post.title }}</div>
-      <div class="blog__card__text-box__paragraph">{{ post.paragraph }}</div>
-      <button
-        class="blog__card__text-box__btn btn-reset btn-black"
-        routerLink="{{ post.buttonURL }}"
-      >
+    <div class="text-box">
+      <h2 class="title">{{ post.title }}</h2>
+      <p class="paragraph">{{ post.paragraph }}</p>
+      <button class="btn btn-reset btn-black" routerLink="{{ post.buttonURL }}">
         PRZECZYTAJ WPIS
       </button>
     </div>

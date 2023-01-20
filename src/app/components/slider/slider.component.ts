@@ -12,27 +12,27 @@ export class SliderComponent implements AfterViewInit {
   numberOfPhotos: number;
   visiblePhotoStyle: { [klass: string]: any } = {};
   hiddenPhotoStyle: { [klass: string]: any } = {};
-  visiblePhotoTextStyle:  { [klass: string]: any } = {};
-  hiddenPhotoTextStyle:  { [klass: string]: any } = {};
+  visiblePhotoTextStyle: { [klass: string]: any } = {};
+  hiddenPhotoTextStyle: { [klass: string]: any } = {};
 
   constructor(private renderer: Renderer2, private elem: ElementRef) {
     this.visiblePhotoStyle = {
       opacity: '1',
       'z-index': '1',
-      transition: 'opacity 0.5s ease 0s'
+      transition: 'opacity 0.5s ease 0s',
     };
     this.hiddenPhotoStyle = {
       opacity: '0',
       'z-index': '0',
-      transition: 'opacity 0.5s ease 0s'
+      transition: 'opacity 0.5s ease 0s',
     };
     this.visiblePhotoTextStyle = {
       opacity: '1',
-      transition: 'opacity 0.5s ease 0.5s'
+      transition: 'opacity 0.5s ease 0.5s',
     };
     this.hiddenPhotoTextStyle = {
       opacity: '0',
-      transition: 'opacity 0.5s ease 0s'
+      transition: 'opacity 0.5s ease 0s',
     };
     this.sliderPhotos = SLIDER_PHOTOS;
     this.sliderPhotos.forEach((photo) => {
@@ -58,7 +58,7 @@ export class SliderComponent implements AfterViewInit {
 
   ngAfterViewInit(): void {
     this.slides = this.elem.nativeElement.querySelectorAll(
-      '.slideshow-container__slides__slide'
+      '.slide'
     );
   }
 }
