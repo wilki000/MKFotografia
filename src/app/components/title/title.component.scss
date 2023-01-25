@@ -5,7 +5,7 @@
   flex-direction: row;
   justify-content: center;
   align-items: center;
-  padding-top: 7rem;
+  padding-top: 10rem;
 
   .line {
     height: 2px;
@@ -22,7 +22,6 @@
 
 @media (min-width: 576px) {
   .container {
-    padding-top: 8rem;
     .line {
       width: 40px;
     }
@@ -33,7 +32,6 @@
 }
 @media (min-width: 768px) {
   .container {
-    padding-top: 9rem;
     .line {
       width: 50px;
     }
@@ -45,7 +43,7 @@
 }
 @media (min-width: 992px) {
   .container {
-    padding-top: 10rem;
+    padding-top: 12rem;
     .line {
       width: 60px;
     }
@@ -57,7 +55,7 @@
 }
 @media (min-width: 1200px) {
   .container {
-    padding-top: 11rem;
+    padding-top: 14rem;
     .line {
       width: 70px;
     }

@@ -2,9 +2,10 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { ContactComponent } from '@pages/contact/contact.component';
 import { HomePageComponent } from '@pages/home-page/home-page.component';
-import { PageNotFoundComponent } from '@pages/page-not-found/page-not-found.component';
 import { PortfolioPageComponent } from '@pages/portfolio-page/portfolio-page.component';
 import { QaPageComponent } from '@pages/qa-page/qa-page.component';
+import { FullOfferPageComponent } from '@pages/full-offer-page/full-offer-page.component';
+import { PageNotFoundComponent } from '@pages/page-not-found/page-not-found.component';
 
 const routes: Routes = [
   {
@@ -23,6 +24,11 @@ const routes: Routes = [
   {
     path: 'contact',
     component: ContactComponent,
+    data: { style: 'black' },
+  },
+  {
+    path: 'full-offer',
+    component: FullOfferPageComponent,
     data: { style: 'black' },
   },
   {

@@ -21,6 +21,8 @@ import { PortfolioPageComponent } from './pages/portfolio-page/portfolio-page.co
 import { DisplayPhotoComponent } from './components/display-photo/display-photo.component';
 import { ContactComponent } from './pages/contact/contact.component';
 import { PageNotFoundComponent } from './pages/page-not-found/page-not-found.component';
+import { FullOfferPageComponent } from './pages/full-offer-page/full-offer-page.component';
+import { OfferPageComponent } from './pages/offer-page/offer-page.component';
 
 @NgModule({
   declarations: [
@@ -43,6 +45,8 @@ import { PageNotFoundComponent } from './pages/page-not-found/page-not-found.com
     DisplayPhotoComponent,
     ContactComponent,
     PageNotFoundComponent,
+    FullOfferPageComponent,
+    OfferPageComponent,
   ],
   imports: [BrowserModule, AppRoutingModule],
   providers: [],
