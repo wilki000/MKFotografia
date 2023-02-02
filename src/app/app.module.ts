@@ -22,7 +22,8 @@ import { DisplayPhotoComponent } from './components/display-photo/display-photo.
 import { ContactComponent } from './pages/contact/contact.component';
 import { PageNotFoundComponent } from './pages/page-not-found/page-not-found.component';
 import { FullOfferPageComponent } from './pages/full-offer-page/full-offer-page.component';
-import { OfferPageComponent } from './pages/offer-page/offer-page.component';
+import { SingleOfferPageComponent } from '@pages/single-offer-page/single-offer-page.component';
+import { GalleryComponent } from './components/gallery/gallery.component';
 
 @NgModule({
   declarations: [
@@ -46,7 +47,8 @@ import { OfferPageComponent } from './pages/offer-page/offer-page.component';
     ContactComponent,
     PageNotFoundComponent,
     FullOfferPageComponent,
-    OfferPageComponent,
+    SingleOfferPageComponent,
+    GalleryComponent,
   ],
   imports: [BrowserModule, AppRoutingModule],
   providers: [],

@@ -1,59 +1,59 @@
 export interface PortfolioModel {
   image: string;
-  title: string;
+  alt: string;
 }
 
 export const PORTFOLIO: PortfolioModel[] = [
   {
     image: 'assets/img/portfolio-1.jpg',
-    title: '',
+    alt: '',
   },
   {
     image: 'assets/img/portfolio-2.jpg',
-    title: '',
+    alt: '',
   },
   {
     image: 'assets/img/portfolio-3.jpg',
-    title: '',
+    alt: '',
   },
   {
     image: 'assets/img/portfolio-4.jpg',
-    title: '',
+    alt: '',
   },
   {
     image: 'assets/img/portfolio-5.jpg',
-    title: '',
+    alt: '',
   },
   {
     image: 'assets/img/portfolio-6.jpg',
-    title: '',
+    alt: '',
   },
   {
     image: 'assets/img/portfolio-7.jpg',
-    title: '',
+    alt: '',
   },
   {
     image: 'assets/img/portfolio-8.jpg',
-    title: '',
+    alt: '',
   },
   {
     image: 'assets/img/portfolio-9.jpg',
-    title: '',
+    alt: '',
   },
   {
     image: 'assets/img/portfolio-10.jpg',
-    title: '',
+    alt: '',
   },
   {
     image: 'assets/img/portfolio-11.jpg',
-    title: '',
+    alt: '',
   },
   {
     image: 'assets/img/portfolio-12.jpg',
-    title: '',
+    alt: '',
   },
   {
     image: 'assets/img/portfolio-13.jpg',
-    title: '',
+    alt: '',
   },
 ];

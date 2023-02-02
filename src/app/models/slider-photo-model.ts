@@ -23,26 +23,26 @@ export const SLIDER_PHOTOS: SliderPhotoModel[] = [
   },
   {
     image: 'assets/img/slide-3.webp',
-    title: 'Profesjonalny Reportaż Ślubny',
+    title: 'Bajeczne sesje plenerowe',
     subtitle: 'Wyjątkowe zdjęcia z najważniejszych chwil w Waszym życiu.',
     alt: 'Pan młody trzymający pannę młodą w wodzie.',
   },
   {
     image: 'assets/img/slide-4.jpg',
-    title: 'Fotografia Weselna',
-    subtitle: 'Szczere i autentyczne zdjęcia będą pamiątką na lata.',
+    title: 'Autentyczne Miłosne Historie',
+    subtitle: 'Perfekcyjna jakość zdjęć w dobrej cenie.',
     alt: 'Tańcząca para młoda.',
   },
   {
     image: 'assets/img/slide-5.jpg',
-    title: 'Fotografia Weselna',
-    subtitle: 'Szczere i autentyczne zdjęcia będą pamiątką na lata.',
+    title: 'Profesjonalny Reportaż Ślubny',
+    subtitle: 'W cenę reportażu wliczam ślubną sesję plenerową.',
     alt: 'Tańcząca para młoda.',
   },
   {
     image: 'assets/img/slide-6.jpg',
-    title: 'Fotografia Weselna',
-    subtitle: 'Szczere i autentyczne zdjęcia będą pamiątką na lata.',
+    title: 'Emocje W Kadrze',
+    subtitle: 'Naturalne zdjęcia ślubne pełne emocji.',
     alt: 'Tańcząca para młoda.',
-  }
+  },
 ];

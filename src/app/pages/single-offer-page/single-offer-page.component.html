@@ -1,0 +1,52 @@
+<section *ngIf="singleOfferPage">
+  <div
+    class="img"
+    [style.background-image]="'url(' + singleOfferPage.image + ')'"
+    [style.background-position]="'50% ' + singleOfferPage.photoOffset + '%'"
+    title="singleOfferPage.alt"
+  >
+    <div class="overlay">
+      <h1>{{ singleOfferPage.title }}</h1>
+    </div>
+  </div>
+  <app-title [paddingTop]="'4'">Oferta</app-title>
+  <div class="text-container wrapper">
+    <div class="text-box box-1">
+      <p [innerHTML]="singleOfferPage.mainParagraph"></p>
+    </div>
+    <div class="text-box box-2">
+      <h3>W skład podstawowej oferty wchodzi:</h3>
+      <br />
+      <div *ngFor="let e of singleOfferPage.offerParagraph; let i = index">
+        <li>
+          {{ e }}
+        </li>
+        <br *ngIf="i === singleOfferPage.spaceBetweenIndex - 1" />
+      </div>
+      <div *ngIf="singleOfferPage.price">
+        <br />
+        <p>
+          Cena zaczyna się już <b>{{ singleOfferPage.price }}.</b>
+        </p>
+        <p>
+          (Powyższa cena dotyczy wymienionych wyżej rzeczy. Jeżeli chcesz
+          poszerzyć bazową ofertę napisz do mnie i ustalmy razem wszystkie
+          szczegóły.)
+        </p>
+      </div>
+    </div>
+    <div class="text-box box-3">
+      <h3>Dodatkowe informacje:</h3>
+      <br />
+      <div *ngFor="let e of singleOfferPage.additionalInfo">
+        <li>{{ e }}</li>
+      </div>
+      <br />
+      <p>
+        W razie wątpliwości zajrzyj do sekcji<a href="/qa"> WARTO WIEDZIEĆ</a>,
+        gdzie znajdują się najczęściej zadawane pytania.
+      </p>
+    </div>
+  </div>
+  <app-gallery [gallery]="singleOfferPage.gallery"></app-gallery>
+</section>

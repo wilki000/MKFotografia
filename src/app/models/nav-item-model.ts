@@ -64,7 +64,7 @@ export const CATEGORIES: NavItemModel[] = [
       },
       {
         displayName: 'Pełna oferta',
-        path: '/full-offer',
+        path: '/offer',
         last: false,
         navStyle: "black",
         subCategories: null,

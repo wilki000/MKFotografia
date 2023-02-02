@@ -1,0 +1,98 @@
+.wrapper {
+  max-width: 1200px;
+}
+.photo-box {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  padding: 2rem 1.5rem 0rem;
+  .photo {
+    width: 47%;
+    overflow: hidden;
+    .img {
+      height: 100%;
+      width: 100%;
+      //background-image: url(/assets/img/specialphoto.webp);
+      background-size: cover;
+      background-position: center;
+      transition: transform 0.35s;
+      cursor: pointer;
+      &:hover {
+        transform: scale(1.2);
+      }
+    }
+  }
+  .photo:after {
+    content: "";
+    display: block;
+    padding-bottom: 100%;
+  }
+}
+.btn {
+  position: relative;
+  left: 50%;
+  transform: translate(-50%, 0);
+  margin: 5rem 0;
+  color: #333;
+  background-color: #fff;
+  border: 2px solid #333;
+  &:hover {
+    color: #fff;
+    background-color: #333;
+  }
+}
+
+@media (min-width: 375px) {
+  .photo-box {
+    .photo {
+      width: 47.5%;
+    }
+  }
+}
+
+@media (min-width: 576px) {
+  .photo-box {
+    .photo {
+      width: 48%;
+    }
+  }
+}
+
+@media (min-width: 768px) {
+  .photo-box {
+    padding-top: 2.5rem;
+    .photo {
+      width: 31.5%;
+    }
+  }
+  .btn {
+    margin: 7rem 0;
+    height: 55px;
+  }
+}
+
+@media (min-width: 992px) {
+  .photo-box {
+    .photo {
+      width: 23.5%;
+    }
+  }
+}
+@media (min-width: 1200px) {
+  .photo-box {
+    .photo {
+      width: 24%;
+    }
+  }
+  .btn {
+    margin: 10rem 0;
+  }
+}
+
+@media (min-width: 1400px) {
+  .photo-box {
+    padding-left: 0;
+    padding-right: 0;
+  }
+}

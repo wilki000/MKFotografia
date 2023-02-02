@@ -10,8 +10,10 @@
       >
         <div class="overlay">
           <h2 class="title">{{ offer.title }}</h2>
-          <p class="paragraph">{{ offer.paragraph }}</p>
-          <button class="btn btn-reset btn-black">SPRAWDŹ OFERTĘ</button>
+          <p class="paragraph">{{ offer.teaser }}</p>
+          <button
+          routerLink="{{ offer.relativeURL }}"
+          class="btn btn-reset btn-black">SPRAWDŹ OFERTĘ</button>
         </div>
       </div>
     </div>
