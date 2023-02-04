@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { OnInit, Component, Input } from '@angular/core';
 import { BLOG, PostModel } from '@models/post-model';
 
 @Component({
@@ -6,11 +6,16 @@ import { BLOG, PostModel } from '@models/post-model';
   templateUrl: './blog.component.html',
   styleUrls: ['./blog.component.scss'],
 })
-export class BlogComponent {
+export class BlogComponent implements OnInit {
   @Input() homePage!: boolean;
-  posts: PostModel[];
+  posts!: PostModel[];
 
-  constructor() {
-    this.posts = BLOG;
+  constructor() {}
+  ngOnInit(): void {
+    if (this.homePage) {
+      this.posts = [BLOG[0]];
+    } else {
+      this.posts = BLOG;
+    }
   }
 }

@@ -1,0 +1,26 @@
+.btn {
+  position: relative;
+  left: 50%;
+  transform: translate(-50%, 0);
+  margin: 5rem 0;
+  color: #333;
+  background-color: #fff;
+  border: 2px solid #333;
+  &:hover {
+    color: #fff;
+    background-color: #333;
+  }
+}
+
+@media (min-width: 768px) {
+  .btn {
+    margin: 7rem 0;
+    height: 55px;
+  }
+}
+
+@media (min-width: 1200px) {
+  .btn {
+    margin: 10rem 0;
+  }
+}

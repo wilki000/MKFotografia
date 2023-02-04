@@ -24,6 +24,8 @@ import { PageNotFoundComponent } from './pages/page-not-found/page-not-found.com
 import { FullOfferPageComponent } from './pages/full-offer-page/full-offer-page.component';
 import { SingleOfferPageComponent } from '@pages/single-offer-page/single-offer-page.component';
 import { GalleryComponent } from './components/gallery/gallery.component';
+import { BlogListPageComponent } from './pages/blog-list-page/blog-list-page.component';
+import { BlogArticlePageComponent } from './pages/blog-article-page/blog-article-page.component';
 
 @NgModule({
   declarations: [
@@ -49,6 +51,8 @@ import { GalleryComponent } from './components/gallery/gallery.component';
     FullOfferPageComponent,
     SingleOfferPageComponent,
     GalleryComponent,
+    BlogListPageComponent,
+    BlogArticlePageComponent,
   ],
   imports: [BrowserModule, AppRoutingModule],
   providers: [],

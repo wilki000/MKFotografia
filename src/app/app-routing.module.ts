@@ -7,6 +7,8 @@ import { QaPageComponent } from '@pages/qa-page/qa-page.component';
 import { FullOfferPageComponent } from '@pages/full-offer-page/full-offer-page.component';
 import { PageNotFoundComponent } from '@pages/page-not-found/page-not-found.component';
 import { SingleOfferPageComponent } from '@pages/single-offer-page/single-offer-page.component';
+import { BlogListPageComponent } from '@pages/blog-list-page/blog-list-page.component';
+import { BlogArticlePageComponent } from '@pages/blog-article-page/blog-article-page.component';
 
 const routes: Routes = [
   {
@@ -32,6 +34,16 @@ const routes: Routes = [
     component: FullOfferPageComponent,
     data: { style: 'black' },
   },
+  {
+    path: 'blog',
+    component: BlogListPageComponent,
+    data: { style: 'black' },
+  },
+  // {
+  //   path: 'blog',
+  //   component: BlogArticlePageComponent,
+  //   data: { style: 'black' },
+  // },
   {
     path: 'offer/wedding-reportage',
     component: SingleOfferPageComponent,

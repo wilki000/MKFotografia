@@ -1,0 +1,11 @@
+<section>
+  <app-title>Blog</app-title>
+  <div class="blog-wrapper">
+    <div class="img" alt=""></div>
+    <article>
+      <h2>{{ post.title }}</h2>
+      <p *ngFor="let paragraph of post.postData.mainContent">{{ paragraph }}</p>
+    </article>
+  </div>
+  <app-gallery [gallery]="post.gallery"></app-gallery>
+</section>
