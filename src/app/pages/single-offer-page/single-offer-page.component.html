@@ -1,9 +1,9 @@
-<section *ngIf="singleOfferPage">
+<section *ngIf="singleOfferPage !== null">
   <div
     class="img"
-    [style.background-image]="'url(' + singleOfferPage.image + ')'"
+    [style.background-image]="'url(' + singleOfferPage.pageImage + ')'"
     [style.background-position]="'50% ' + singleOfferPage.photoOffset + '%'"
-    title="singleOfferPage.alt"
+    title="singleOfferPage.imgAlt"
   >
     <div class="overlay">
       <h1>{{ singleOfferPage.title }}</h1>
@@ -21,7 +21,7 @@
         <li>
           {{ e }}
         </li>
-        <br *ngIf="i === singleOfferPage.spaceBetweenIndex - 1" />
+        <br *ngIf="i === singleOfferPage.spaceBetweenIndex! - 1" />
       </div>
       <div *ngIf="singleOfferPage.price">
         <br />
@@ -48,5 +48,8 @@
       </p>
     </div>
   </div>
-  <app-gallery [gallery]="singleOfferPage.gallery"></app-gallery>
+  <app-gallery
+    *ngIf="singleOfferPage.gallery !== undefined"
+    [gallery]="singleOfferPage.gallery"
+  ></app-gallery>
 </section>

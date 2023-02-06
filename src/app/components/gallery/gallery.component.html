@@ -2,7 +2,7 @@
   #displayPhoto
   [ngStyle]="!active ? displayNonePhotoStyle : {}"
   (exit)="active = false"
-  [pictures]="gallery.photos"
+  [pictures]="gallery?.photos ? gallery!.photos : null"
 ></app-display-photo>
 <section>
   <app-title [paddingTop]="'4'">Galeria</app-title>

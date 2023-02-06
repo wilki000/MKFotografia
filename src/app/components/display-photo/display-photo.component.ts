@@ -16,14 +16,14 @@ import { PortfolioModel } from '@models/portfolio-model';
 })
 export class DisplayPhotoComponent {
   @Output() exit = new EventEmitter<void>();
-  @Input() pictures!: PortfolioModel[];
+  @Input() pictures: PortfolioModel[] | null = null;
   @ViewChild('changeItem', { static: false })
   changeItem!: ChangeItemComponent;
   currentPhotoObj!: PortfolioModel;
   currentPhoto: number = 0;
 
   openInNewTab() {
-    window.open(this.pictures[this.currentPhoto].image, '_blank');
+    window.open(this.pictures![this.currentPhoto].image, '_blank');
   }
 
   close() {

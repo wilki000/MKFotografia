@@ -30,8 +30,8 @@ const routes: Routes = [
     data: { style: 'black' },
   },
   {
-    path: 'offer',
-    component: FullOfferPageComponent,
+    path: 'blog/:id',
+    component: BlogArticlePageComponent,
     data: { style: 'black' },
   },
   {
@@ -39,55 +39,15 @@ const routes: Routes = [
     component: BlogListPageComponent,
     data: { style: 'black' },
   },
-  // {
-  //   path: 'blog',
-  //   component: BlogArticlePageComponent,
-  //   data: { style: 'black' },
-  // },
   {
-    path: 'offer/wedding-reportage',
+    path: 'offer/:name',
     component: SingleOfferPageComponent,
     data: { style: 'black', offerId: 0 },
   },
   {
-    path: 'offer/engagement-wedding-session',
-    component: SingleOfferPageComponent,
-    data: { style: 'black', offerId: 1 },
-  },
-  {
-    path: 'offer/christening',
-    component: SingleOfferPageComponent,
-    data: { style: 'black', offerId: 2 },
-  },
-  {
-    path: 'offer/communion',
-    component: SingleOfferPageComponent,
-    data: { style: 'black', offerId: 3 },
-  },
-  {
-    path: 'offer/family',
-    component: SingleOfferPageComponent,
-    data: { style: 'black', offerId: 4 },
-  },
-  {
-    path: 'offer/pregnancy',
-    component: SingleOfferPageComponent,
-    data: { style: 'black', offerId: 5 },
-  },
-  {
-    path: 'offer/newborn',
-    component: SingleOfferPageComponent,
-    data: { style: 'black', offerId: 6 },
-  },
-  {
-    path: 'offer/baby',
-    component: SingleOfferPageComponent,
-    data: { style: 'black', offerId: 7 },
-  },
-  {
-    path: 'offer/birthday',
-    component: SingleOfferPageComponent,
-    data: { style: 'black', offerId: 8 },
+    path: 'offer',
+    component: FullOfferPageComponent,
+    data: { style: 'black' },
   },
   {
     path: '**',

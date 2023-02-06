@@ -1,36 +1,34 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
-import { ActivatedRoute, Router, Scroll } from '@angular/router';
+import { ActivatedRoute } from '@angular/router';
 import {
   SingleOfferPageModel,
   SINGLE_OFFER_PAGE,
 } from '@models/single-offer-page-model';
-import { filter, map, Subscription, switchMap } from 'rxjs';
+import { Subscription } from 'rxjs';
+import { HttpOfferService } from 'src/app/services/http-offer.service';
 
 @Component({
   selector: 'app-single-offer-page',
   templateUrl: './single-offer-page.component.html',
   styleUrls: ['./single-offer-page.component.scss'],
 })
-export class SingleOfferPageComponent implements OnInit, OnDestroy {
+export class SingleOfferPageComponent implements OnInit {
   singleOfferPage: SingleOfferPageModel | null = null;
-  offerIdSubscription!: Subscription;
+  offerNameSubscription!: Subscription;
+  private offerSubscription: Subscription | null = null;
 
-  constructor(private router: Router, private activatedRoute: ActivatedRoute) {}
+  constructor(private route: ActivatedRoute, private http: HttpOfferService) {}
 
   ngOnInit() {
-    this.offerIdSubscription = this.router.events
-      .pipe(
-        filter((event) => event instanceof Scroll),
-        map(() => this.activatedRoute),
-        switchMap((route) => route!.data),
-        map((data) => data['offerId'])
-      )
-      .subscribe(
-        (offerId) => (this.singleOfferPage = SINGLE_OFFER_PAGE[offerId])
-      );
-  }
-
-  ngOnDestroy() {
-    this.offerIdSubscription.unsubscribe();
+    this.offerNameSubscription = this.route.params.subscribe((params) => {
+      let name = 'offer/' + params['name'];
+      this.offerNameSubscription?.unsubscribe();
+      this.offerSubscription = this.http
+        .getOfferByName<SingleOfferPageModel>(name, SINGLE_OFFER_PAGE[name])
+        .subscribe((singleOfferPage) => {
+          this.singleOfferPage = singleOfferPage;
+          this.offerSubscription?.unsubscribe();
+        });
+    });
   }
 }

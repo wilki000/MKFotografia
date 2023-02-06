@@ -1,7 +1,7 @@
 export interface GalleryModel {
   id: number;
   name: string;
-  alt: string;
+  displayName: string;
   photos: GalleryPhotoModel[];
 }
 
@@ -11,10 +11,17 @@ export interface GalleryPhotoModel {
   image: string;
 }
 
+export interface GalleryPhotoQueryModel {
+  pageNumber: number;
+  pageSize: number;
+  galleryId: number;
+  initial: number | null;
+}
+
 export const GALLERY_MODEL: GalleryModel = {
   id: 1,
   name: 'aaa',
-  alt: '',
+  displayName: '',
   photos: [
     {
       id: 1,

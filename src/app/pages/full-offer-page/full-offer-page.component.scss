@@ -35,7 +35,7 @@
           .title {
             line-height: 60px;
             font-family: "DancingScript";
-            font-size: 3.4rem;
+            font-size: 3rem;
             font-weight: 500;
             transition: font-size 0.5s, padding-top 0.5s;
           }
@@ -118,6 +118,7 @@
             .title {
               position: relative;
               top: 0;
+              //font-size: 3.2rem;
               line-height: 80px;
               transition: top 0.5s, padding-top 0.5s, font-size 0.5s;
             }

@@ -1,4 +1,4 @@
 <section class="wrapper">
-    <app-blog [homePage]="false"></app-blog>
-    <button class="btn-reset btn-black btn">ZAŁADUJ WIĘCEJ</button>
+    <app-blog #blog [homePage]="false"></app-blog>
+    <button (click)="loadMore()"   class="btn-reset btn-black btn">ZAŁADUJ WIĘCEJ</button>
 </section>

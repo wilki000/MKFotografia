@@ -1,4 +1,4 @@
-<section class="offer-box">
+<section *ngIf="offers != null" class="offer-box">
   <div class="nav wrapper">
     <button
       class="button btn-reset"
@@ -9,9 +9,7 @@
     </button>
   </div>
 
-  <div class="background visible" 
-  [ngStyle]="currentPhoto"
-  >
+  <div class="background visible" [ngStyle]="currentPhoto">
     <div class="overlay">
       <div
         class="offers wrapper"
@@ -27,34 +25,31 @@
         >
           <div
             class="img"
-            [style.background-image]="'url(' + offer.image + ')'"
-            title="{{ offer.alt }}"
+            [style.background-image]="'url(' + offer.homePageImage + ')'"
+            title="{{ offer.imgAlt }}"
           ></div>
-          <div
-            class="text-box non-selectable"
-          >
-            <div
-              class="title"
-            >
+          <div class="text-box non-selectable">
+            <div class="title">
               {{ offer.title }}
             </div>
-            <div
-              class="paragraph"
-            >
+            <div class="paragraph">
               {{ offer.paragraphMobile }}
             </div>
             <div
-              class="paragraph-desktop" *ngFor = "let paragraph of offer.paragraphDesktop"
+              class="paragraph-desktop"
+              *ngFor="let paragraph of offer.paragraphDesktop"
             >
               {{ paragraph }}
             </div>
             <button
-              class="btn btn-reset btn-black" routerLink="{{ offer.buttonURL }}"
+              class="btn btn-reset btn-black"
+              routerLink="{{ offer.buttonURL }}"
             >
               SPRAWDŹ OFERTĘ
             </button>
             <button
-              class="btn-long btn-reset btn-black" routerLink="{{ offer.buttonURL }}"
+              class="btn-long btn-reset btn-black"
+              routerLink="{{ offer.buttonURL }}"
             >
               SPRAWDŹ OFERTĘ {{ offer.buttonText }}
             </button>

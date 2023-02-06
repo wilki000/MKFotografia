@@ -1,7 +1,8 @@
 export interface OfferHomePageModel {
-  image: string;
-  alt: string;
-  title: string;
+  id?: number;
+  homePageImage?: string;
+  imgAlt?: string;
+  title?: string;
   paragraphMobile: string;
   paragraphDesktop: string[];
   buttonURL: string;
@@ -11,9 +12,6 @@ export interface OfferHomePageModel {
 
 export const OFFER_HOME_PAGE: OfferHomePageModel[] = [
   {
-    image: 'assets/img/slide-1.webp',
-    alt: 'Młoda para całująca się w otoczeniu drzew.',
-    title: 'Reportaż ślubny',
     paragraphMobile:
       'Staram się swoją obecnością z aparatem nie stresować pary młodej ani zaproszonych gości. Dzięki łatwości w nawiązywaniu kontaktów staram się sprawić aby wszyscy czuli się swobodnie i nie bali się obiektywu aparatu.',
     paragraphDesktop: [
@@ -25,9 +23,6 @@ export const OFFER_HOME_PAGE: OfferHomePageModel[] = [
     buttonText: 'REPORTAŻ ŚLUBNY',
   },
   {
-    image: 'assets/img/slide-3.webp',
-    alt: 'Pan młody trzymający pannę młodą w wodzie.',
-    title: 'Sesja ślubna/narzeczeńska',
     paragraphMobile:
       'Jeśli marzy wam się historia pełna miłości i szaleństwa sesja, dobrze trafiliście! Potraktujcie ten czas jako randkę, tyle że w towarzystwie uśmiechniętej pani fotograf.',
     paragraphDesktop: [
@@ -38,9 +33,6 @@ export const OFFER_HOME_PAGE: OfferHomePageModel[] = [
     buttonText: 'SESJA ŚLUBNA/NARZECZEŃSKA',
   },
   {
-    image: 'assets/img/offer-hp-4.jpg',
-    alt: 'Ksiądz polewający główkę dziecka poświęconą wodą.',
-    title: 'Chrzest',
     paragraphMobile:
       'Chrzest Święty to wydarzenie pełne wzruszeń i silnych emocji. Dla dziecka to także emocje, choć ono zazwyczaj tego nie pamięta. Właśnie dlatego tak ważne jest zachowanie dla niego tych wspomnień na zdjęciach.',
     paragraphDesktop: [
@@ -52,9 +44,6 @@ export const OFFER_HOME_PAGE: OfferHomePageModel[] = [
     buttonText: 'CHRZEST',
   },
   {
-    image: 'assets/img/offer-hp-3.jpg',
-    alt: 'Dziewczynka w albie komunijniej na trawie.',
-    title: 'Komunia',
     paragraphMobile:
       'Komunia Święta jest jednym z pierwszysch sakramentów, który dziecko przyjmuje w pełni świadomie. Tak piękny i wzniosły dzień wart jest do zapamiętania na całe życie.',
     paragraphDesktop: [

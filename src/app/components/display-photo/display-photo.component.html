@@ -9,7 +9,7 @@
         />
       </svg>
     </div>
-    <div class="img-box">
+    <div class="img-box" *ngIf="pictures != undefined">
       <img
         (click)="openInNewTab()"
         [src]="
@@ -22,7 +22,7 @@
     <app-change-item
       #changeItem
       [align]="'center'"
-      [lastItemIndex]="pictures.length"
+      [lastItemIndex]="pictures != undefined ? pictures.length : 0"
       (changeItem)="setCurrentPhoto($event, true)"
     ></app-change-item>
   </div>
