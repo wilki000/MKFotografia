@@ -13,5 +13,8 @@
       </p>
     </article>
   </div>
-  <app-gallery *ngIf="post != undefined" [gallery]="post.gallery"></app-gallery>
+  <app-gallery
+    *ngIf="post != undefined && post.gallery != null"
+    [gallery]="post.gallery"
+  ></app-gallery>
 </section>

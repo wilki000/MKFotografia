@@ -1,0 +1,43 @@
+.container {
+  min-height: 100vh;
+  background: #b993d6;
+  background: -webkit-linear-gradient(to right, #8ca6db, #b993d6);
+  background: linear-gradient(to right, #8ca6db, #b993d6);
+  overflow: hidden;
+  h1 {
+    padding: 3rem 3rem 3rem;
+    width: 100%;
+    font-size: 3.6rem;
+    color: #fff;
+    border-bottom: 2px solid silver;
+  }
+  .btn-box {
+    display: flex;
+    justify-content: flex-end;
+    width: 100%;
+    .btn {
+      margin: 3rem;
+      font-size: 2rem;
+    }
+  }
+  .layout {
+    margin: auto;
+    margin-bottom: 3rem;
+    padding: 3rem;
+    max-width: 36rem;
+    background-color: #fff;
+    box-shadow: 0px 3px 15px rgba(0, 0, 0, 0.25);
+    h2 {
+      display: inline-block;
+      padding-bottom: 1rem;
+      font-size: 2.4rem;
+    }
+    .img {
+      max-width: 300px;
+      aspect-ratio: 12/32.5;
+      background-image: url(/assets/img/portfolio-layout.png);
+      background-size: cover;
+      background-position: center;
+    }
+  }
+}

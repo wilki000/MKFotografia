@@ -1,0 +1,267 @@
+<div class="container">
+  <h1>Oferta - Pełna Oferta / Edycja</h1>
+
+  <div class="add-post-box">
+    <div class="form-box">
+      <form
+        *ngIf="angForm !== null"
+        [formGroup]="angForm"
+        enctype="multipart/form-data"
+        novalidate
+        (ngSubmit)="saveFullOffer()"
+      >
+        <div class="btn-box">
+          <button
+            type="submit"
+            [disabled]="angForm.invalid || requestInProgress"
+            class="btn btn-reset btn-black"
+          >
+            Zapisz zmiany
+          </button>
+        </div>
+        <div class="form-container">
+          <h2>Edycja oferty</h2>
+          <div class="container-left">
+            <div class="form-group">
+              <label>Tytuł</label>
+              <input
+                class="form-control"
+                formControlName="title"
+                type="text"
+                required
+              />
+              <span></span>
+            </div>
+            <div
+              *ngIf="
+                angForm.controls['title'].invalid &&
+                (angForm.controls['title'].dirty ||
+                  angForm.controls['title'].touched)
+              "
+              class="alert alert-danger"
+            >
+              <div
+                *ngIf="
+                  angForm.controls['title'].errors !== null &&
+                  angForm.controls['title'].errors['required']
+                "
+              >
+                <p style="color: tomato">Tytuł jest wymagany.</p>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label>Główne zdjęcie</label>
+              <input
+                accept=".jpg; .jpeg"
+                class="form-control upload"
+                formControlName="pageImg"
+                type="file"
+                (change)="loadFileToPreview($event)"
+              />
+            </div>
+
+            <div class="form-group">
+              <label>Offset zdjęcia</label>
+              <input
+                class="form-control"
+                formControlName="photoOffset"
+                type="number"
+                min="0"
+                max="100"
+              />
+              <span></span>
+            </div>
+
+            <div class="form-group">
+              <label>Opis zdjęcia</label>
+              <input class="form-control" formControlName="alt" type="text" />
+            </div>
+
+            <div class="form-group">
+              <label>ID galerii</label>
+              <input
+                class="form-control"
+                formControlName="galleryId"
+                type="number"
+              />
+            </div>
+
+            <div class="btn-gallery">
+              <button
+                class="btn-add-gallery btn-black btn-reset"
+                type="button"
+                *ngIf="angForm.controls['galleryId'].value == null"
+                (click)="
+                  addGalleryPopupService.loadGalleryPopupComponent(addGallery())
+                "
+              >
+                Dodaj galerię
+              </button>
+            </div>
+          </div>
+
+          <div class="container-right">
+            <label class="textarea-label">W skład oferty wchodzi</label>
+            <div class="form-array" formArrayName="offerParagraph">
+              <div
+                class="form-control"
+                *ngFor="let control of offerParagraph.controls; let i = index"
+              >
+                <div class="form-group textarea-box">
+                  <textarea
+                    class="form-control long-p"
+                    [formControl]="getOfferParagraphElement(i)"
+                    type="text"
+                    required
+                    maxlength="450"
+                  >
+                  </textarea>
+                  <div class="remove">
+                    <svg viewBox="0 0 24 24" (click)="removeOfferParagraph(i)">
+                      <path
+                        fill="tomato"
+                        d="M19 4h-3.5l-1-1h-5l-1 1H5v2h14M6 19a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2V7H6v12Z"
+                      />
+                    </svg>
+                  </div>
+                  <span></span>
+                </div>
+                <div
+                  *ngIf="
+                    offerParagraph.at(i).invalid &&
+                    (offerParagraph.at(i).dirty || offerParagraph.at(i).touched)
+                  "
+                  class="alert alert-danger"
+                >
+                  <div
+                    *ngIf="
+                      offerParagraph.at(i).errors !== null &&
+                      offerParagraph.at(i).errors!['required']
+                    "
+                  >
+                    <p style="color: tomato">Tekst jest wymagany.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <button
+              class="add-paragraph btn-reset"
+              (click)="addOfferParagraph()"
+              type="button"
+            >
+              Dodaj Paragraf
+            </button>
+
+            <div class="form-group">
+              <label>Po którym paragrafie ma być dłuższa przerwa</label>
+              <input
+                class="form-control"
+                formControlName="spaceBetweenIndex"
+                type="number"
+              />
+            </div>
+
+            <div class="form-group">
+              <label>Cena</label>
+              <input
+                class="form-control"
+                formControlName="price"
+                type="string"
+              />
+            </div>
+
+            <label class="textarea-label">Dodatkowe informaje</label>
+            <div class="form-array" formArrayName="additionalInfo">
+              <div
+                class="form-control"
+                *ngFor="let control of additionalInfo.controls; let i = index"
+              >
+                <div class="form-group textarea-box">
+                  <textarea
+                    class="form-control long-p"
+                    [formControl]="getAdditionalInfoElement(i)"
+                    type="text"
+                    required
+                    maxlength="450"
+                  >
+                  </textarea>
+                  <div
+                    class="remove"
+                    (click)="removeAdditionalInfoParagraph(i)"
+                  >
+                    <svg viewBox="0 0 24 24">
+                      <path
+                        fill="tomato"
+                        d="M19 4h-3.5l-1-1h-5l-1 1H5v2h14M6 19a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2V7H6v12Z"
+                      />
+                    </svg>
+                  </div>
+                  <span></span>
+                </div>
+                <div
+                  *ngIf="
+                    additionalInfo.at(i).invalid &&
+                    (additionalInfo.at(i).dirty || additionalInfo.at(i).touched)
+                  "
+                  class="alert alert-danger"
+                >
+                  <div
+                    *ngIf="
+                      additionalInfo.at(i).errors !== null &&
+                      additionalInfo.at(i).errors!['required']
+                    "
+                  >
+                    <p style="color: tomato">Tekst jest wymagany.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <button
+              class="add-paragraph btn-reset"
+              (click)="addAdditionalInfoParagraph()"
+              type="button"
+            >
+              Dodaj Paragraf
+            </button>
+          </div>
+        </div>
+      </form>
+    </div>
+
+    <div class="preview" *ngIf="singleOfferPageModel !== null">
+      <h2 class="main-label">Podgląd</h2>
+
+      <div class="preview-box">
+        <div class="preview-box-photo">
+          <label>Zdjęcie - pełna oferta</label>
+          <div class="photo-full" [style.background-image]="pageImg"></div>
+        </div>
+        <div class="preview-box-photo">
+          <label>Zdjęcie - pojedyncza oferta</label>
+          <div
+            class="photo-single"
+            [style.background-image]="pageImg"
+            [style.background-position]="
+              '50% ' + (angForm?.controls)!['photoOffset'].value + '%'
+            "
+          >
+            <div class="photo-overlay"></div>
+          </div>
+        </div>
+
+        <div class="preview-box-text">
+          <label>W skład oferty wchodzi: </label>
+          <p *ngFor="let paragraph of offerParagraph.controls; let i = index">
+            {{ getOfferParagraphElement(i).value }}
+          </p>
+          <label>Dodatkowe informacje:</label>
+          <p *ngFor="let paragraph of additionalInfo.controls; let i = index">
+            {{ getAdditionalInfoElement(i).value }}
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

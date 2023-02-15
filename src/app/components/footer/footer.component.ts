@@ -6,7 +6,7 @@ import { Component } from '@angular/core';
 })
 export class FooterComponent {
   get footer(): string {
-    return '© Monika Kalicka';
+    return '© Magia Chwili Fotografia';
   }
 
   getDate(): Date {

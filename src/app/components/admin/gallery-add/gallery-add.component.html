@@ -1,0 +1,57 @@
+<div class="container">
+  <h1>Galeria / Dodawanie galerii</h1>
+
+  <div class="add-post-box">
+    <div class="form-box">
+      <form
+        *ngIf="angForm !== null"
+        [formGroup]="angForm"
+        novalidate
+        (ngSubmit)="addGallery()"
+      >
+        <div class="btn-box">
+          <button
+            type="submit"
+            [disabled]="
+              angForm.pristine || angForm.invalid || requestInProgress
+            "
+            class="btn btn-reset btn-black"
+          >
+            Dodaj galerię
+          </button>
+        </div>
+        <div class="form-container">
+          <h2>Dodawanie galerii</h2>
+          <div class="container-left">
+            <div class="form-group">
+              <label>Tytuł</label>
+              <input
+                class="form-control"
+                formControlName="displayName"
+                type="text"
+              />
+              <span></span>
+            </div>
+            <div
+              *ngIf="
+                angForm.controls['displayName'].invalid &&
+                (angForm.controls['displayName'].dirty ||
+                  angForm.controls['displayName'].touched)
+              "
+              class="alert alert-danger"
+            >
+              <div
+                *ngIf="
+                  angForm.controls['displayName'].errors !== null &&
+                  angForm.controls['displayName'].errors['required']
+                "
+              >
+                <p style="color: tomato">Tytuł jest wymagany.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

@@ -6,6 +6,12 @@ export interface QaModel {
 
 export const QA: QaModel[] = [
   {
+    question: 'Pliki cookies - do czego są wykorzystywane w serwisie?',
+    answer:
+      'Serwis wykorzystuje pliki cookies w celu obsługi kont użytkowników.',
+    expanded: false,
+  },
+  {
     question: 'Jaki jest czas oczekiwania na zrealizowany materiał?',
     answer: 'Czas oczekiwania wynosi maksymalnie 90 dni.',
     expanded: false,

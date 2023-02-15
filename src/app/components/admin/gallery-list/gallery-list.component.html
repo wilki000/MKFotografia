@@ -1,0 +1,75 @@
+<div class="container">
+    <h1>Galeria</h1>
+    <div class="btn-box">
+      <button class="btn-reset btn-black btn"  routerLink="/admin/gallery-add" >Dodaj nową galerię</button>
+    </div>
+    <div class="table-box">
+      <table>
+        <tr>
+          <th>ID</th>
+          <th>Tytuł</th>
+          <th>Przyjazny URL</th>
+          <th>Edycja</th>
+          <th class="delate-title">Usuń</th>
+        </tr>
+  
+        <!-- ngfor -->
+        <tr *ngFor="let gallery of galleries">
+          <td>{{ gallery.id }}</td>
+          <td>{{ gallery.displayName }}</td>
+          <td>{{ gallery.name }}</td>
+          <td class="edit" routerLink="/admin/gallery-edit/{{ gallery.id }}">
+            <svg viewBox="0 0 24 24">
+              <path
+                fill="#333"
+                d="M5 19h1.4l8.625-8.625l-1.4-1.4L5 17.6ZM19.3 8.925l-4.25-4.2l1.4-1.4q.575-.575 1.413-.575q.837 0 1.412.575l1.4 1.4q.575.575.6 1.388q.025.812-.55 1.387ZM17.85 10.4L7.25 21H3v-4.25l10.6-10.6Zm-3.525-.725l-.7-.7l1.4 1.4Z"
+              />
+            </svg>
+          </td>
+          <td class="delate" (click)="
+          popupService.loadDeleteConfirmationComponent(deleteGallery(gallery.id))
+        ">
+            <svg viewBox="0 0 24 24">
+              <path
+                fill="tomato"
+                d="M19 4h-3.5l-1-1h-5l-1 1H5v2h14M6 19a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2V7H6v12Z"
+              />
+            </svg>
+          </td>
+        </tr>
+        
+
+      </table>
+
+      <div class="pagination">
+        <ul>
+          <li class="pag-btn">
+            <span
+              ><svg (click)="previousPage()" viewBox="0 0 24 24">
+                <path
+                  d="M15.125 21.1L6.7 12.7q-.15-.15-.212-.325q-.063-.175-.063-.375t.063-.375q.062-.175.212-.325l8.425-8.425q.35-.35.875-.35t.9.375q.375.375.375.875t-.375.875L9.55 12l7.35 7.35q.35.35.35.862q0 .513-.375.888t-.875.375q-.5 0-.875-.375Z"
+                /></svg
+            ></span>
+          </li>
+          <li>
+            <span
+              >Strona {{ query.pageNumber }} z {{ pagedResult?.totalPages }}</span
+            >
+          </li>
+          <li class="pag-btn">
+            <span
+              ><svg  (click)="nextPage()"  viewBox="0 0 24 24">
+                <g transform="rotate(180 12 12)">
+                  <path
+                    d="M15.125 21.1L6.7 12.7q-.15-.15-.212-.325q-.063-.175-.063-.375t.063-.375q.062-.175.212-.325l8.425-8.425q.35-.35.875-.35t.9.375q.375.375.375.875t-.375.875L9.55 12l7.35 7.35q.35.35.35.862q0 .513-.375.888t-.875.375q-.5 0-.875-.375Z"
+                  />
+                </g></svg
+            ></span>
+          </li>
+        </ul>
+      </div>
+  
+    </div>
+    
+  </div>
+  

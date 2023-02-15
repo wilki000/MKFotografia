@@ -1,0 +1,10 @@
+<div class="container" [style.display]="accepted ? 'none' : 'block'">
+  <div class="box wrapper">
+    <p>
+      Serwis wykorzystuje pliki cookies. Więcej informacji znajdziesz
+      <b routerLink="/qa">tutaj</b> w sekcji “pliki cookies”. Jeśli nie wyrażasz
+      na to zgody opuść stronę.
+    </p>
+    <button class="btn-reset btn" (click)="acceptCookies()">AKCEPTUJĘ</button>
+  </div>
+</div>

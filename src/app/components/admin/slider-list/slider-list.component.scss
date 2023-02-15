@@ -1,0 +1,53 @@
+.container {
+    min-height: 100vh;
+    background: #b993d6;
+    background: -webkit-linear-gradient(to right, #8ca6db, #b993d6);
+    background: linear-gradient(to right, #8ca6db, #b993d6);
+    h1 {
+      padding: 3rem 3rem 3rem;
+      width: 100%;
+      font-size: 3.6rem;
+      color: #fff;
+      border-bottom: 2px solid silver;
+    }
+    .table-box {
+      padding: 3rem;
+      table,
+      th,
+      td {
+        border: 2px solid silver;
+      }
+      table {
+        width: 100%;
+        border-collapse: collapse;
+        font-size: 1.6rem;
+        background-color: #fff;
+        th {
+          padding: 1rem 0;
+          font-size: 2rem;
+        }
+        td {
+          padding: 1rem;
+        }
+        .id {
+            width: 120px;
+        }
+        .edit{
+          padding: 0;
+          width: 120px;
+          text-align: center;
+          cursor: pointer;
+          transition: opacity 0.3s;
+          svg {
+            width: 3rem;
+            height: 3rem;
+          }
+          &:hover {
+            opacity: 0.5;
+          }
+        }
+      }
+    }
+    
+
+}

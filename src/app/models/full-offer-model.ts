@@ -3,7 +3,7 @@ export interface FullOfferModel {
   pageImage?: string;
   title?: string;
   teaser: string[];
-  imgAlt?: string;
+  pageImgAlt?: string;
   relativeURL: string;
 }
 

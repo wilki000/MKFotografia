@@ -1,8 +1,8 @@
 <!-- <nav class="sticky bgc"> -->
-<nav class="{{ currentStyle }}">
+<nav *ngIf="currentStyle !== null" class="{{ currentStyle }}">
   <div
     #navbar
-    class="sticky visible"
+    class="fixed visible"
     id="navbar"
     [ngClass]="shouldShowNavBackground() ? 'bgc' : 'transparent'"
   >
@@ -21,13 +21,13 @@
         </div>
         <div class="logo-mobile">
           <img
-            src="/assets/img/logo-white.svg"
+            src="/assets/img/logomch.svg"
             alt="MK logo Fotografia Ślubna"
           />
         </div>
         <div class="logo-desktop">
           <img
-            src="/assets/img/logo-{{ currentStyle }}.svg"
+            src="/assets/img/logomch.svg"
             alt="MK logo Fotografia Ślubna"
           />
         </div>
@@ -35,6 +35,7 @@
           <app-nav-item
             *ngFor="let category of categories"
             [mainCategory]="category"
+            [currentStyle]="currentStyle"
             (routeEvent)="restartCheckedState()"
           ></app-nav-item>
         </div>

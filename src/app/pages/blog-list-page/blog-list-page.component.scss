@@ -1,8 +1,11 @@
+section {
+  margin-bottom: 5rem;
+}
 .btn {
   position: relative;
   left: 50%;
   transform: translate(-50%, 0);
-  margin: 5rem 0;
+  margin-top: 5rem;
   color: #333;
   background-color: #fff;
   border: 2px solid #333;
@@ -13,14 +16,20 @@
 }
 
 @media (min-width: 768px) {
+  section {
+    margin-bottom: 7rem;
+  }
   .btn {
-    margin: 7rem 0;
+    margin-top: 7rem;
     height: 55px;
   }
 }
 
 @media (min-width: 1200px) {
+  section {
+    margin-bottom: 10rem;
+  }
   .btn {
-    margin: 10rem 0;
+    margin-top: 10rem;
   }
 }

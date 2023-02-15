@@ -1,0 +1,115 @@
+<div class="container">
+  <h1>Oferta - Strona Główna / Edycja</h1>
+
+  <div class="add-post-box">
+    <div class="form-box">
+      <form
+        *ngIf="angForm !== null"
+        [formGroup]="angForm"
+        enctype="multipart/form-data"
+        novalidate
+        (ngSubmit)="saveHomePageOfferPhoto()"
+      >
+        <div class="btn-box">
+          <button
+            type="submit"
+            [disabled]="
+              angForm.pristine || angForm.invalid || requestInProgress
+            "
+            class="btn btn-reset btn-black"
+          >
+            Zapisz zmiany
+          </button>
+        </div>
+        <div class="form-container">
+          <h2>Edycja oferty</h2>
+          <div class="container-left">
+            <div class="form-group">
+              <label>Tytuł</label>
+              <input
+                class="form-control"
+                type="text"
+                value="{{ homePageModel?.title }}"
+                disabled
+              />
+              <span></span>
+            </div>
+          </div>
+
+          <div class="container-right">
+            <div class="form-group">
+              <label>Zdjęcie</label>
+              <input
+                accept=".jpg; .jpeg"
+                class="form-control upload"
+                formControlName="homeImg"
+                type="file"
+                (change)="loadFileToPreview($event)"
+                required
+              />
+              <span></span>
+            </div>
+            <div
+              *ngIf="
+                angForm.controls['homeImg'].invalid &&
+                (angForm.controls['homeImg'].dirty ||
+                  angForm.controls['homeImg'].touched)
+              "
+              class="alert alert-danger"
+            >
+              <div
+                *ngIf="
+                  angForm.controls['homeImg'].errors !== null &&
+                  angForm.controls['homeImg'].errors['required']
+                "
+              >
+                <p style="color: tomato">Główne zdjęcie jest wymagane.</p>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label>Opis zdjęcia</label>
+              <input
+                class="form-control"
+                formControlName="homeImgAlt"
+                type="text"
+                required
+              />
+              <span></span>
+            </div>
+            <div
+              *ngIf="
+                angForm.controls['homeImgAlt'].invalid &&
+                (angForm.controls['homeImgAlt'].dirty ||
+                  angForm.controls['homeImgAlt'].touched)
+              "
+              class="alert alert-danger"
+            >
+              <div
+                *ngIf="
+                  angForm.controls['homeImgAlt'].errors !== null &&
+                  angForm.controls['homeImgAlt'].errors['required']
+                "
+              >
+                <p style="color: tomato">Opis zdjęcia jest wymagany.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </form>
+    </div>
+
+    <div class="preview">
+      <h2 class="main-label">Podgląd</h2>
+
+      <div class="preview-box">
+        <div class="preview-box-photo">
+          <label>Główne zdjęcie</label>
+          <div class="photo-box">
+            <div class="photo" [style.background-image]="mainPhoto"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

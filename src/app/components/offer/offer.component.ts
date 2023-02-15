@@ -1,10 +1,11 @@
 import { Component } from '@angular/core';
+import { ActivatedRoute, Router } from '@angular/router';
 import {
   OfferHomePageModel,
   OFFER_HOME_PAGE,
 } from '@models/offer-home-page-model';
-import { Subscription } from 'rxjs';
 import { HttpOfferService } from 'src/app/services/http-offer.service';
+import { Location } from '@angular/common';
 
 @Component({
   selector: 'app-offer',
@@ -16,10 +17,14 @@ export class OfferComponent {
   currentPhoto: { [klass: string]: any } = {};
   private scrollElementPressed: boolean = false;
   private mousePosition: number | undefined = undefined;
-  private offerSubscription: Subscription | null = null;
 
-  constructor(private http: HttpOfferService) {
-    this.offerSubscription = http
+  constructor(
+    private http: HttpOfferService,
+    private router: Router,
+    private location: Location,
+    private activatedRoute: ActivatedRoute
+  ) {
+    this.http
       .getOfferByNames<OfferHomePageModel>(
         [
           'offer/wedding-reportage',
@@ -39,7 +44,20 @@ export class OfferComponent {
           'background-image': 'url(' + this.offers[0].homePageImage + ')',
           'background-position': 'center',
         };
-        this.offerSubscription?.unsubscribe();
+        //This is ok because response comes from the server after ngOnInit
+        this.activatedRoute.queryParamMap.subscribe((params) => {
+          let offerParam = params.get('offer');
+          if (offerParam !== null) {
+            let foundOffer = this.offers?.find(
+              (offer) => offer.query == offerParam
+            );
+            if (foundOffer != undefined) {
+              this.activateTab(foundOffer);
+            } else {
+              this.router.navigate(['/not-found']);
+            }
+          }
+        });
       });
   }
 
@@ -55,6 +73,14 @@ export class OfferComponent {
         offer.visible = false;
       }
     });
+    const url = this.router
+      .createUrlTree([], {
+        relativeTo: this.activatedRoute,
+        queryParams: { offer: newOffer.query },
+      })
+      .toString();
+
+    this.location.go(url);
   }
   mouseDown(event: MouseEvent) {
     this.mousePosition = event.clientX;

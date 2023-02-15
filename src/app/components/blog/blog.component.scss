@@ -27,8 +27,10 @@
       align-items: center;
       text-align: center;
       .title {
-        font-family: "DancingScript";
-        font-size: 2.4rem;
+        padding-left: 2rem;
+        padding-right: 2rem;
+        //font-family: "DancingScript";
+        font-size: 2rem;
         font-weight: 700;
       }
       .paragraph {
@@ -41,25 +43,16 @@
   }
 }
 
-@media (min-width: 375px) {
-  .blog {
-    .card {
-      .text-box {
-        .title {
-          font-size: 2.5rem;
-          font-weight: 700;
-          padding-left: 2rem;
-          padding-right: 2rem;
-        }
-      }
-    }
-  }
-}
 @media (min-width: 576px) {
   .blog {
     .card {
       grid-template-rows: 6fr 4fr;
       height: 490px;
+      .text-box {
+        .title {
+          font-size: 2.2rem;
+        }
+      }
     }
   }
 }
@@ -98,6 +91,8 @@
         .title {
           padding-left: 0;
           padding-right: 0;
+          font-family: "DancingScript";
+          font-size: 3.2rem;
         }
         .paragraph {
           display: block;

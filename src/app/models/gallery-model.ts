@@ -9,6 +9,7 @@ export interface GalleryPhotoModel {
   id: number;
   alt: string;
   image: string;
+  order: number;
 }
 
 export interface GalleryPhotoQueryModel {
@@ -18,70 +19,20 @@ export interface GalleryPhotoQueryModel {
   initial: number | null;
 }
 
-export const GALLERY_MODEL: GalleryModel = {
-  id: 1,
-  name: 'aaa',
-  displayName: '',
-  photos: [
-    {
-      id: 1,
-      alt: '',
-      image: 'assets/img/full-offer-1.jpg',
-    },
-    {
-      id: 1,
-      alt: '',
-      image: 'assets/img/full-offer-5.jpg',
-    },
-    {
-      id: 1,
-      alt: '',
-      image: 'assets/img/full-offer-1.jpg',
-    },
-    {
-      id: 1,
-      alt: '',
-      image: 'assets/img/full-offer-5.jpg',
-    },
-    {
-      id: 1,
-      alt: '',
-      image: 'assets/img/full-offer-1.jpg',
-    },
-    {
-      id: 1,
-      alt: '',
-      image: 'assets/img/full-offer-5.jpg',
-    },
-    {
-      id: 1,
-      alt: '',
-      image: 'assets/img/full-offer-1.jpg',
-    },
-    {
-      id: 1,
-      alt: '',
-      image: 'assets/img/full-offer-5.jpg',
-    },
-    {
-      id: 1,
-      alt: '',
-      image: 'assets/img/full-offer-1.jpg',
-    },
-    {
-      id: 1,
-      alt: '',
-      image: 'assets/img/full-offer-5.jpg',
-    },
-    {
-      id: 1,
-      alt: '',
-      image: 'assets/img/full-offer-1.jpg',
-    },
-    {
-      id: 1,
-      alt: '',
-      image: 'assets/img/full-offer-5.jpg',
-    },
-  ],
-};
+export interface GalleryQueryModel {
+  pageNumber: number;
+  pageSize: number;
+}
+
+export interface PostPhotoToGalleryModel {
+  photo: File;
+  order: number;
+  alternativeText: string;
+}
+export interface PhotoOrderModel {
+  id: number;
+  order: number;
+}
+export interface PutPhotoOrdersModel {
+  photoOrders: PhotoOrderModel[];
+}

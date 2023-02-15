@@ -1,0 +1,16 @@
+<div class="overlay">
+  <div class="box">
+    <h2>Czy na pewno chcesz usunąć?</h2>
+    <p>
+      Czy na pewno chcesz usunąć te dane?<br />Ten proces jest nieodwracalny.
+    </p>
+    <div class="button-box">
+      <button class="btn-reset btn-black cancel" (click)="emitClose(false)">
+        Anuluj
+      </button>
+      <button (click)="emitClose(true)" class="btn-reset btn-black delate">
+        Usuń
+      </button>
+    </div>
+  </div>
+</div>

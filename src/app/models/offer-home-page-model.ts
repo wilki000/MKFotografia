@@ -1,13 +1,19 @@
 export interface OfferHomePageModel {
   id?: number;
   homePageImage?: string;
-  imgAlt?: string;
+  homeImgAlt?: string;
   title?: string;
   paragraphMobile: string;
   paragraphDesktop: string[];
   buttonURL: string;
   buttonText: string;
   visible?: boolean;
+  query: string;
+}
+
+export interface PutHomeOfferPhotoModel {
+  homeImg: File;
+  homeImgAlt: string;
 }
 
 export const OFFER_HOME_PAGE: OfferHomePageModel[] = [
@@ -21,6 +27,7 @@ export const OFFER_HOME_PAGE: OfferHomePageModel[] = [
     ],
     buttonURL: '/offer/wedding-reportage',
     buttonText: 'REPORTAŻ ŚLUBNY',
+    query: 'wedding-reportage',
   },
   {
     paragraphMobile:
@@ -31,6 +38,7 @@ export const OFFER_HOME_PAGE: OfferHomePageModel[] = [
     ],
     buttonURL: '/offer/engagement-wedding-session',
     buttonText: 'SESJA ŚLUBNA/NARZECZEŃSKA',
+    query: 'engagement-wedding-session',
   },
   {
     paragraphMobile:
@@ -42,6 +50,7 @@ export const OFFER_HOME_PAGE: OfferHomePageModel[] = [
     ],
     buttonURL: '/offer/christening',
     buttonText: 'CHRZEST',
+    query: 'christening',
   },
   {
     paragraphMobile:
@@ -53,5 +62,6 @@ export const OFFER_HOME_PAGE: OfferHomePageModel[] = [
     ],
     buttonURL: '/offer/communion',
     buttonText: 'KOMUNIA',
+    query: 'communion',
   },
 ];

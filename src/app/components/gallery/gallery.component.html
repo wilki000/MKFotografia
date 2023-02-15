@@ -18,7 +18,11 @@
       ></div>
     </div>
   </div>
-  <button (click)="loadMore()" class="btn btn-reset btn-black">
+  <button
+    *ngIf="!allLoaded"
+    (click)="loadMore()"
+    class="btn btn-reset btn-black"
+  >
     ZAŁADUJ WIĘCEJ
   </button>
 </section>
