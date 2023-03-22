@@ -1,9 +1,6 @@
-import { HttpClient, HttpHeaders, HttpParams } from '@angular/common/http';
+import { HttpHeaders, HttpParams } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import {
-  OfferHomePageModel,
-  PutHomeOfferPhotoModel,
-} from '@models/offer-home-page-model';
+import { PutHomeOfferPhotoModel } from '@models/offer-home-page-model';
 import { OfferModel } from '@models/offer-model';
 import { PutPageOfferModel } from '@models/single-offer-page-model';
 import { map, Observable } from 'rxjs';
@@ -46,6 +43,8 @@ export class HttpOfferService {
     const params = new HttpParams({
       fromObject: { name },
     });
+    console.log('name: ', name);
+    console.log('url: ', this.url + '/get-by-name');
     return this.http
       .get<OfferModel>(this.url + '/get-by-name', { params: params })
       .pipe(

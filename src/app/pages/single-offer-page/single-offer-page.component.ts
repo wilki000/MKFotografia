@@ -23,7 +23,11 @@ export class SingleOfferPageComponent implements OnInit {
     private router: Router,
     private metaService: Meta,
     private titleService: Title
-  ) {}
+  ) {
+    this.router.routeReuseStrategy.shouldReuseRoute = () => {
+      return false;
+    };
+  }
 
   ngOnInit() {
     this.route.params.subscribe((params) => {
