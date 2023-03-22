@@ -1,0 +1,192 @@
+<div class="container">
+  <h1>Galeria / Edycja galerii</h1>
+
+  <div class="add-post-box">
+    <div class="form-box">
+      <form
+        (keydown.enter)="$event.preventDefault()"
+        *ngIf="galleryForm !== null && galleryModel !== null"
+        [formGroup]="galleryForm"
+        novalidate
+        (ngSubmit)="saveGallery()"
+      >
+        <div class="btn-box">
+          <button
+            type="submit"
+            [disabled]="galleryForm.invalid || requestInProgress"
+            class="btn btn-reset btn-black"
+          >
+            Zapisz zmiany
+          </button>
+        </div>
+        <div class="form-container">
+          <h2>Edycja galerii</h2>
+          <div class="container-left">
+            <div class="form-group">
+              <label>ID</label>
+              <input
+                class="form-control"
+                type="number"
+                disabled
+                value="{{ galleryModel.id }}"
+              />
+            </div>
+
+            <div class="form-group">
+              <label>Tytuł</label>
+              <input
+                class="form-control"
+                type="text"
+                disabled
+                value="{{ galleryModel.displayName }}"
+              />
+            </div>
+          </div>
+
+          <form
+            (keydown.enter)="$event.preventDefault()"
+            class="container-right"
+            *ngIf="photoForm !== null"
+            [formGroup]="photoForm"
+            novalidate
+            (ngSubmit)="uploadPhoto()"
+          >
+            <div class="form-group">
+              <label>Zdjęcie</label>
+              <input
+                enctype="multipart/form-data"
+                accept=".jpg; .jpeg"
+                class="form-control upload"
+                formControlName="photo"
+                type="file"
+                required
+                (change)="loadFile($event)"
+              />
+              <span></span>
+            </div>
+            <div
+              *ngIf="
+                photoForm.controls['photo'].invalid &&
+                (photoForm.controls['photo'].dirty ||
+                  photoForm.controls['photo'].touched)
+              "
+              class="alert alert-danger"
+            >
+              <div
+                *ngIf="
+                  photoForm.controls['photo'].errors !== null &&
+                  photoForm.controls['photo'].errors['required']
+                "
+              >
+                <p style="color: tomato">Główne zdjęcie jest wymagane.</p>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label>Opis zdjęcia</label>
+              <input
+                class="form-control"
+                formControlName="alternativeText"
+                type="text"
+                required
+              />
+              <span></span>
+            </div>
+            <div
+              *ngIf="
+                photoForm.controls['alternativeText'].invalid &&
+                (photoForm.controls['alternativeText'].dirty ||
+                  photoForm.controls['alternativeText'].touched)
+              "
+              class="alert alert-danger"
+            >
+              <div
+                *ngIf="
+                  photoForm.controls['alternativeText'].errors !== null &&
+                  photoForm.controls['alternativeText'].errors['required']
+                "
+              >
+                <p style="color: tomato">Opis zdjęcia jest wymagany.</p>
+              </div>
+            </div>
+            <button
+              type="submit"
+              class="add-photo btn-reset"
+              [disabled]="requestInProgress"
+            >
+              Dodaj zdjęcie
+            </button>
+          </form>
+        </div>
+
+        <div
+          class="preview"
+          *ngIf="galleryModel.photos !== null"
+          formArrayName="photoOrders"
+          novalidate
+        >
+          <div class="preview-box">
+            <h2 class="main-label">Podgląd</h2>
+            <button
+              type="button"
+              class="btn-black btn-reset btn-delete"
+              (click)="toggleEditMode()"
+            >
+              WŁĄCZ TRYB {{ editMode ? "USUWANIA" : "EDYCJI" }} ZDJĘĆ
+            </button>
+          </div>
+
+          <div class="flex-box">
+            <div
+              *ngFor="let photo of photoOrders.controls; let i = index"
+              class="photo-box"
+            >
+              <div
+                class="img"
+                [style.background-image]="
+                  'url(' + galleryModel.photos[i].image + ')'
+                "
+              >
+                <div
+                  class="arrow-box"
+                  [style.display]="editMode ? 'flex' : 'none'"
+                >
+                  <div class="arrow" (click)="changeOrder(i, -1)">
+                    <svg viewBox="0 2.4 24 24">
+                      <path
+                        d="m12 18.4l1.4-1.4l-1.6-1.6H16v-2h-4.2l1.6-1.6l-1.4-1.4l-4 4l4 4Zm0 6q-2.075 0-3.9-.787t-3.175-2.138q-1.35-1.35-2.137-3.175T2 14.4q0-2.075.788-3.9t2.137-3.175q1.35-1.35 3.175-2.138T12 4.4q2.075 0 3.9.788t3.175 2.137q1.35 1.35 2.138 3.175T22 14.4q0 2.075-.788 3.9t-2.137 3.175q-1.35 1.35-3.175 2.138T12 24.4Zm0-2q3.35 0 5.675-2.325T20 14.4q0-3.35-2.325-5.675T12 6.4q-3.35 0-5.675 2.325T4 14.4q0 3.35 2.325 5.675T12 22.4Zm0-8Z"
+                      />
+                    </svg>
+                  </div>
+                  <div class="arrow" (click)="changeOrder(i, 1)">
+                    <svg viewBox="0 0 24 24">
+                      <path
+                        d="m12 16l4-4l-4-4l-1.4 1.4l1.6 1.6H8v2h4.2l-1.6 1.6Zm0 6q-2.075 0-3.9-.788q-1.825-.787-3.175-2.137q-1.35-1.35-2.137-3.175Q2 14.075 2 12t.788-3.9q.787-1.825 2.137-3.175q1.35-1.35 3.175-2.138Q9.925 2 12 2t3.9.787q1.825.788 3.175 2.138q1.35 1.35 2.137 3.175Q22 9.925 22 12t-.788 3.9q-.787 1.825-2.137 3.175q-1.35 1.35-3.175 2.137Q14.075 22 12 22Zm0-2q3.35 0 5.675-2.325Q20 15.35 20 12q0-3.35-2.325-5.675Q15.35 4 12 4Q8.65 4 6.325 6.325Q4 8.65 4 12q0 3.35 2.325 5.675Q8.65 20 12 20Zm0-8Z"
+                      />
+                    </svg>
+                  </div>
+                </div>
+                <div
+                  class="remove"
+                  [style.display]="editMode ? 'none' : 'flex'"
+                  (click)="
+                    popupService.loadDeleteConfirmationComponent(
+                      removePhoto(galleryModel.photos[i].id)
+                    )
+                  "
+                >
+                  <svg viewBox="0 0 24 24">
+                    <path
+                      fill="tomato"
+                      d="M19 4h-3.5l-1-1h-5l-1 1H5v2h14M6 19a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2V7H6v12Z"
+                    />
+                  </svg>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

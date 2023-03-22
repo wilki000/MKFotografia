@@ -3,47 +3,32 @@ import {
   ElementRef,
   Input,
   OnInit,
-  Renderer2,
   HostListener,
   AfterViewInit,
   Output,
   EventEmitter,
-  OnDestroy,
 } from '@angular/core';
 import { NavItemModel } from '@models/nav-item-model';
-import { filter, map, Subscription, switchMap } from 'rxjs';
-import { ActivatedRoute, NavigationEnd, Router } from '@angular/router';
 
 @Component({
   selector: 'app-nav-item',
   templateUrl: './nav-item.component.html',
   styleUrls: ['./nav-item.component.scss'],
 })
-export class NavItemComponent implements OnInit, AfterViewInit, OnDestroy {
+export class NavItemComponent implements OnInit, AfterViewInit {
   @Input() mainCategory!: NavItemModel;
+  @Input() currentStyle!: string;
   @Output() routeEvent = new EventEmitter<void>();
 
   subcategories!: HTMLElement;
   category!: HTMLElement;
-  styleSubscription!: Subscription;
-  currentStyle!: string;
 
   hasSubcategories!: boolean;
-  constructor(private renderer: Renderer2, private elem: ElementRef, private router: Router, private activatedRoute: ActivatedRoute) {}
+  constructor(private elem: ElementRef) {}
 
   ngOnInit(): void {
     this.hasSubcategories = this.mainCategory.subCategories != null;
-    this.styleSubscription = this.router.events
-      .pipe(
-        filter((event) => event instanceof NavigationEnd),
-        map(() => this.activatedRoute),
-        map((route) => route.firstChild),
-        switchMap((route) => route!.data),
-        map((data) => data['style'])
-      )
-      .subscribe((style) => (this.currentStyle = style));
   }
-
   ngAfterViewInit(): void {
     this.subcategories =
       this.elem.nativeElement.querySelectorAll('.subcategory')[0];
@@ -82,9 +67,5 @@ export class NavItemComponent implements OnInit, AfterViewInit, OnDestroy {
 
   emitRouteEvent() {
     this.routeEvent.emit();
-  }
-
-  ngOnDestroy() {
-    this.styleSubscription.unsubscribe();
   }
 }

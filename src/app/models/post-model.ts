@@ -1,18 +1,29 @@
+import { GalleryModel } from './gallery-model';
+
 export interface PostModel {
+  id: number;
   image: string;
   title: string;
-  paragraph: string;
-  buttonURL: string;
+  createdDate: string;
+  postData: PostDataModel;
   alt: string;
+  gallery: GalleryModel;
 }
 
-export const BLOG: PostModel[] = [
-  {
-    image: 'assets/img/blog.jpg',
-    title: 'Marcin & Kaja  | Gościniec Szlachecki | Białystok | 10.06.2020r. ',
-    paragraph:
-      'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip..."Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip...',
-    buttonURL: '/offer/wedding-reportage',
-    alt: '',
-  },
-];
+export interface PostDataModel {
+  teaser: string;
+  mainContent: string[];
+}
+
+export interface PostQueryModel {
+  pageNumber: number;
+  pageSize: number;
+}
+
+export interface PutPostModel {
+  title: string | null;
+  galleryId: number | null;
+  alt: string | null;
+  postData: PostDataModel;
+  photo: File | null;
+}

@@ -1,0 +1,10 @@
+<section class="wrapper">
+  <app-blog class="blog-section" #blog [homePage]="false"></app-blog>
+  <button
+    *ngIf="!allLoaded"
+    (click)="loadMore()"
+    class="btn-reset btn-black btn"
+  >
+    ZAŁADUJ WIĘCEJ
+  </button>
+</section>

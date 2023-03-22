@@ -1,0 +1,28 @@
+<app-display-photo
+  #displayPhoto
+  [ngStyle]="!active ? displayNonePhotoStyle : {}"
+  (exit)="active = false"
+  [pictures]="gallery?.photos ? gallery!.photos : null"
+></app-display-photo>
+<section>
+  <app-title [paddingTop]="'4'">Galeria</app-title>
+  <div class="photo-box wrapper">
+    <div
+      *ngFor="let photo of gallery?.photos; let i = index"
+      class="photo"
+      (click)="activate(i)"
+    >
+      <div
+        [style.background-image]="'url(' + photo.image + ')'"
+        class="img"
+      ></div>
+    </div>
+  </div>
+  <button
+    *ngIf="!allLoaded"
+    (click)="loadMore()"
+    class="btn btn-reset btn-black"
+  >
+    ZAŁADUJ WIĘCEJ
+  </button>
+</section>

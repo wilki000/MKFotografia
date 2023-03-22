@@ -1,0 +1,18 @@
+<div class="overlay">
+  <div class="box" *ngIf="error !== null">
+    <h2>Wystąpił błąd</h2>
+    <h3>{{ error.status }} {{ error.statusText }}</h3>
+
+    <ul *ngIf="error.error !== null && isSimpleError()">
+      <p class="title">{{ error.error }}</p>
+    </ul>
+    <div *ngIf="error.error !== null && !isSimpleError()">
+      <ul *ngFor="let convertedError of convertedErrors">
+        <p class="title">Tytuł: {{ convertedError.name }}</p>
+        <li *ngFor="let issue of convertedError.issues">{{ issue }}</li>
+      </ul>
+    </div>
+
+    <button class="btn btn-reset btn-black" (click)="closePopup()">OK</button>
+  </div>
+</div>

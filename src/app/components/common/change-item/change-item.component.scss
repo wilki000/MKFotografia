@@ -18,7 +18,7 @@
   height: 60px;
   width: 100%;
   max-width: 450px;
-  z-index: 888;
+  z-index: 2;
   color: #fff;
 
   .btn {
@@ -35,11 +35,11 @@
     }
   }
 
-  &__button-left {
+  .button-left {
     padding-right: 2rem;
   }
 
-  &__button-right {
+  .button-right {
     padding-left: 2rem;
   }
 
@@ -52,7 +52,7 @@
     font-size: 1.6rem;
     font-weight: 700;
   }
-  &__slash {
+  .slash {
     height: 40px;
     border-right: 1.5px solid;
     transform: rotate(30deg);
@@ -63,16 +63,16 @@
 @media (min-width: 576px) {
   .change-item {
     height: 75px;
-    &__button-left {
+    .button-left {
       padding-right: 2.75rem;
     }
-    &__button-right {
+    .button-right {
       padding-left: 2.75rem;
     }
     .number {
       height: 75px;
     }
-    &__slash {
+    .slash {
       height: 45px;
     }
   }
@@ -81,16 +81,16 @@
 @media (min-width: 768px) {
   .change-item {
     height: 90px;
-    &__button-left {
+    .button-left {
       padding-right: 3.5rem;
     }
-    &__button-right {
+    .button-right {
       padding-left: 3.5rem;
     }
     .number {
       height: 90px;
     }
-    &__slash {
+    .slash {
       height: 50px;
     }
   }
@@ -99,16 +99,16 @@
 @media (min-width: 992px) {
   .change-item {
     height: 105px;
-    &__button-left {
+    .button-left {
       padding-right: 4.25rem;
     }
-    &__button-right {
+    .button-right {
       padding-left: 4.25rem;
     }
     .number {
       height: 105px;
     }
-    &__slash {
+    .slash {
       height: 55px;
     }
   }
@@ -118,17 +118,17 @@
   .change-item {
     height: 120px;
 
-    &__button-left {
+    .button-left {
       padding-right: 5rem;
     }
-    &__button-right {
+    .button-right {
       padding-left: 5rem;
     }
 
     .number {
       height: 120px;
     }
-    &__slash {
+    .slash {
       height: 60px;
     }
   }

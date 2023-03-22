@@ -1,0 +1,21 @@
+<section class="wrapper">
+  <app-title>Pełna oferta</app-title>
+  <div class="layout">
+    <div class="card" *ngFor="let offer of fullOffer">
+      <div
+        (click)="(0)"
+        class="img"
+        [style.background-image]="'url(' + offer.pageImage + ')'"
+        title="{{ offer.pageImgAlt }}"
+      >
+        <div class="overlay">
+          <h2 class="title">{{ offer.title }}</h2>
+          <p class="paragraph">{{ offer.teaser }}</p>
+          <button
+          routerLink="{{ offer.relativeURL }}"
+          class="btn btn-reset btn-black">SPRAWDŹ OFERTĘ</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

@@ -54,7 +54,7 @@ li {
     }
   }
   .subcategory {
-    &__item {
+    .item {
       display: inline-block;
       padding-top: 1.2rem;
       padding-left: 3rem;
@@ -83,82 +83,55 @@ li {
       position: absolute;
     }
     &.last {
-      .black a {
-        //last button - black theme
-        background-color: #333;
-        color: #fff;
-      }
       a {
         background-color: #fff;
         color: #333;
-        .black &:hover {
-          //last button - black theme
-          background-color: #fff;
-          color: #333;
-        }
         &:hover {
-          background-color: #333;
+          border: 2px solid #fff;
           color: #fff;
+          background-color: rgba(255, 255, 255, 0.15);
         }
       }
-    }
-    .black.category,
-    .black .category {
-      //all buttons - black theme
-      color: #333;
     }
     .category {
       padding: 1.5rem 3rem;
       text-decoration: none;
       color: #fff;
       border-bottom: none;
-      transition: color 0.3s, background-color 0.3s;
-      &.black {
-        .svg {
-          & path {
-            //dropdown icon - black theme
-            fill: #333;
-          }
-        }
-      }
+      border: 2px solid transparent;
+      transition: border 0.3s, background-color 0.3s;
       .svg {
         & path {
           fill: #fff;
         }
       }
-      &:hover.black {
-        //all buttons:hover - black theme
-        color: #fff;
-        background-color: #333;
-      }
       &:hover {
-        color: #333;
-        background-color: #fff;
-      }
-      &:hover.black > .svg > path {
-        //svg:hover - black theme
-        fill: #fff;
+        border: 2px solid #fff;
+        color: #fff;
+        background-color: rgba(255, 255, 255, 0.15);
       }
       &:hover > .svg > path {
-        fill: #333;
+        fill: rgb(255, 255, 255);
       }
     }
 
     .subcategory {
       transition: visibility 0s, opacity 0.3s linear;
-      &__item {
+      .item {
         padding-top: 1.4rem;
         padding-left: 2rem;
         padding-bottom: 1.4rem;
         padding-right: 2rem;
         color: #fff;
-        background-color: rgba(41, 41, 41, 0.85);
+        background-color: rgba(41, 41, 41);
         text-decoration: none;
         border-bottom: none;
-        transition: color 0.3s, background-color 0.3s;
+        border: 2px solid transparent;
+        transition: color 0.3s, border 0.3s, background-color 0.3s;
         &:hover {
-          color: #333;
-          background-color: #fff;
+          border: 2px solid #fff;
+          color: #fff;
+          background-color: rgba(107, 107, 107);
         }
       }
     }
@@ -170,11 +143,60 @@ li {
     }
 
     .category:has(~ .subcategory:hover) {
-      color: #333;
-      background-color: #fff;
-      fill: #333;
+      border: 2px solid #fff;
+      color: #fff;
+      background-color: rgba(255, 255, 255, 0.15);
       .svg > path {
-        fill: #333;
+        fill: rgb(255, 255, 255);
+      }
+    }
+  }
+  .black li {
+    &.last {
+      a {
+        background-color: #333;
+        color: #fff;
+        &:hover {
+          border: 2px solid #7e7e7e;
+          background-color: #fff;
+          color: #7e7e7e;
+        }
+      }
+    }
+    .category {
+      color: #333;
+      .svg {
+        & path {
+          fill: #333;
+        }
+      }
+
+      &:hover {
+        color: #7e7e7e;
+        border: 2px solid #7e7e7e;
+      }
+      &:hover > .svg > path {
+        fill: #7e7e7e;
+      }
+    }
+
+    .subcategory {
+      .item {
+        color: #333f;
+        background-color: #fff;
+        &:hover {
+          color: #7e7e7e;
+          background-color: rgb(255, 255, 255);
+          border: 2px solid #7e7e7e;
+        }
+      }
+    }
+
+    .category:has(~ .subcategory:hover) {
+      color: #7e7e7e;
+      border: 2px solid #7e7e7e;
+      .svg > path {
+        fill: #7e7e7e;
       }
     }
   }

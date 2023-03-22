@@ -1,0 +1,157 @@
+@import "variables";
+
+.contact {
+  padding-left: 1.5rem;
+  padding-bottom: 5rem;
+  padding-right: 1.5rem;
+  .img {
+    margin-top: 1rem;
+    max-width: 100%;
+    height: 200px;
+    background-image: url(/assets/img/contact.webp);
+    background-size: cover;
+    background-position: center;
+  }
+  .text-box {
+    text-align: center;
+    overflow-wrap: break-word;
+    .icon {
+      width: 3.6rem;
+      height: 3.6rem;
+      path {
+        fill: #333;
+      }
+    }
+    .title {
+      display: none;
+    }
+    .paragraph {
+      padding-top: 1rem;
+      padding-bottom: 1rem;
+      font-size: 1.6rem;
+      color: #727171;
+    }
+    .phone,
+    .e-mail,
+    .address,
+    .fb {
+      padding-top: 3rem;
+      padding-bottom: 1rem;
+      border-bottom: 2px solid #d2d1d1;
+      p,
+      a {
+        display: block;
+        color: #727171;
+        text-decoration: none;
+      }
+    }
+  }
+}
+
+@media (min-width: 375px) {
+  .contact {
+    .img {
+      height: 230px;
+    }
+  }
+}
+
+@media (min-width: 576px) {
+  .contact {
+    .img {
+      margin-top: 2rem;
+      height: 300px;
+    }
+  }
+}
+
+@media (min-width: 768px) {
+  .contact {
+    .img {
+      margin-top: 3rem;
+      height: 450px;
+    }
+  }
+}
+
+@media (min-width: 992px) {
+  .contact {
+    display: flex;
+    flex-direction: row;
+    padding-top: 16rem;
+    padding-bottom: 10rem;
+    app-title {
+      display: none;
+    }
+    .img {
+      margin-top: 0;
+      width: 50%;
+      height: 360px;
+    }
+    .text-box {
+      padding-left: 3rem;
+      text-align: left;
+      .title {
+        display: inline-block;
+        font-family: $handWritingFont;
+        font-size: 4.8rem;
+      }
+      .paragraph {
+        padding-top: 0;
+        padding-bottom: 3rem;
+        font-size: 1.8rem;
+        color: #727171;
+      }
+      .phone,
+      .e-mail,
+      .address,
+      .fb {
+        display: flex;
+        padding-top: 1rem;
+        padding-bottom: 1rem;
+        border-bottom: none;
+        p,
+        a {
+          padding-left: 3rem;
+          line-height: 3.6rem;
+        }
+      }
+    }
+  }
+}
+
+@media (min-width: 1200px) {
+  .contact {
+    padding-top: 20rem;
+    padding-bottom: 18rem;
+    .img {
+      height: 420px;
+      width: 54%;
+    }
+    .text-box {
+      padding-left: 6rem;
+      .title {
+        font-size: 5.2rem;
+      }
+      .paragraph {
+        padding-top: 0;
+        padding-bottom: 4rem;
+      }
+      .phone,
+      .e-mail,
+      .address,
+      .fb {
+        display: flex;
+        padding-top: 1.5rem;
+        padding-bottom: 1.5rem;
+        border-bottom: none;
+        p,
+        a {
+          padding-left: 3rem;
+          font-size: 1.6rem;
+          line-height: 3.6rem;
+        }
+      }
+    }
+  }
+}

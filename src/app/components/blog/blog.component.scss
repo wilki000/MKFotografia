@@ -1,7 +1,7 @@
 @import "variables";
 
 .blog {
-  &__card {
+  .card {
     display: grid;
     grid-template-columns: 1fr;
     grid-template-rows: 5fr 5fr;
@@ -11,14 +11,14 @@
     margin-right: 1.5rem;
     margin-top: 5rem;
     box-shadow: 0px 3px 15px rgba(0, 0, 0, 0.25);
-    &__img {
+    .img {
       grid-column: 1/2;
       grid-row: 1/2;
       background-position: center;
       background-size: cover;
       background-repeat: no-repeat;
     }
-    &__text-box {
+    .text-box {
       grid-column: 1/2;
       grid-row: 2/3;
       display: flex;
@@ -26,52 +26,48 @@
       justify-content: space-evenly;
       align-items: center;
       text-align: center;
-      &__title {
-        font-family: "DancingScript";
-        font-size: 2.4rem;
+      .title {
+        padding-left: 2rem;
+        padding-right: 2rem;
+        //font-family: "DancingScript";
+        font-size: 2rem;
         font-weight: 700;
       }
-      &__paragraph {
+      .paragraph {
         display: none;
       }
-      &__btn {
+      .btn {
         white-space: nowrap;
       }
     }
   }
 }
 
-@media (min-width: 375px) {
-  .blog {
-    &__card {
-      &__text-box {
-        &__title {
-          font-size: 2.5rem;
-          font-weight: 700;
-          padding-left: 2rem;
-          padding-right: 2rem;
-        }
-      }
-    }
-  }
-}
 @media (min-width: 576px) {
   .blog {
-    &__card {
+    .card {
       grid-template-rows: 6fr 4fr;
       height: 490px;
+      .text-box {
+        .title {
+          font-size: 2.2rem;
+        }
+      }
     }
   }
 }
 
 @media (min-width: 768px) {
   .blog {
-    &__card {
+    .card {
       grid-template-rows: 7fr 3fr;
-      &__text-box {
-        &__title {
+      .text-box {
+        .title {
           padding-left: 0;
           padding-right: 0;
+        }
+        .btn {
+          height: 55px;
         }
       }
     }
@@ -80,23 +76,25 @@
 
 @media (min-width: 992px) {
   .blog {
-    &__card {
+    .card {
       display: grid;
       grid-template-rows: 1fr;
-      &__img {
+      .img {
         grid-row: 1/2;
       }
-      &__text-box {
+      .text-box {
         grid-row: 1/2;
         display: flex;
         flex-direction: column;
         padding-left: 4rem;
         padding-right: 4rem;
-        &__title {
+        .title {
           padding-left: 0;
           padding-right: 0;
+          font-family: "DancingScript";
+          font-size: 3.2rem;
         }
-        &__paragraph {
+        .paragraph {
           display: block;
           text-align: justify;
           font-size: 1.5rem;
@@ -106,32 +104,32 @@
     }
   }
   .home-page {
-    .blog__card {
+    .card {
       grid-template-columns: 1fr 1fr;
-      .blog__card__img {
+      .img {
         grid-column: 2/3;
       }
-      .blog__card__text-box {
+      .text-box {
         grid-column: 1/2;
         align-items: center;
-        .blog__card__text-box__title {
+        .title {
           text-align: center;
         }
       }
     }
   }
   .blog-page {
-    .blog__card {
+    .card {
       grid-template-columns: 1fr 2fr;
       height: 350px;
 
-      .blog__card__img {
+      .img {
         grid-column: 1/2;
       }
-      .blog__card__text-box {
+      .text-box {
         grid-column: 2/3;
         align-items: flex-start;
-        .blog__card__text-box__title {
+        .title {
           text-align: left;
         }
       }
@@ -141,12 +139,15 @@
 
 @media (min-width: 1200px) {
   .blog {
-    &__card {
-      &__text-box {
+    .card {
+      .text-box {
         padding-left: 6rem;
         padding-right: 6rem;
-        &__title {
+        .title {
           font-size: 2.8rem;
+        }
+        .btn {
+          font-size: 1.6rem;
         }
       }
     }
@@ -155,7 +156,7 @@
 
 @media (min-width: 1400px) {
   .blog {
-    &__card {
+    .card {
       margin-left: 0;
       margin-right: 0;
     }

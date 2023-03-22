@@ -1,0 +1,255 @@
+<div class="container">
+  <h1>Blog / Dodaj nowy post</h1>
+
+  <div class="add-post-box">
+    <div class="form-box">
+      <form
+        *ngIf="angForm !== null"
+        [formGroup]="angForm"
+        novalidate
+        enctype="multipart/form-data"
+        (ngSubmit)="savePost()"
+      >
+        <div class="btn-box">
+          <button
+            type="submit"
+            [disabled]="
+              angForm.pristine || angForm.invalid || requestInProgress
+            "
+            class="btn btn-reset btn-black"
+          >
+            Dodaj post
+          </button>
+        </div>
+        <div class="form-container">
+          <h2>Dodawanie posta</h2>
+          <div class="container-left">
+            <div class="form-group">
+              <label>Główne zdjęcie</label>
+              <input
+                accept=".jpg; .jpeg"
+                class="form-control upload"
+                formControlName="photo"
+                type="file"
+                required
+                (change)="loadFileToPreview($event)"
+              />
+              <span></span>
+            </div>
+            <div
+              *ngIf="
+                angForm.controls['photo'].invalid &&
+                (angForm.controls['photo'].dirty ||
+                  angForm.controls['photo'].touched)
+              "
+              class="alert alert-danger"
+            >
+              <div
+                *ngIf="
+                  angForm.controls['photo'].errors !== null &&
+                  angForm.controls['photo'].errors['required']
+                "
+              >
+                <p style="color: tomato">Główne zdjęcie jest wymagane.</p>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label>Opis zdjęcia</label>
+              <input
+                class="form-control"
+                formControlName="alt"
+                type="text"
+                required
+              />
+              <span></span>
+            </div>
+            <div
+              *ngIf="
+                angForm.controls['alt'].invalid &&
+                (angForm.controls['alt'].dirty ||
+                  angForm.controls['alt'].touched)
+              "
+              class="alert alert-danger"
+            >
+              <div
+                *ngIf="
+                  angForm.controls['alt'].errors !== null &&
+                  angForm.controls['alt'].errors['required']
+                "
+              >
+                <p style="color: tomato">Opis zdjęcia jest wymagany.</p>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label>Tytuł</label>
+              <input
+                class="form-control"
+                formControlName="title"
+                type="text"
+                required
+              />
+              <span></span>
+            </div>
+            <div
+              *ngIf="
+                angForm.controls['title'].invalid &&
+                (angForm.controls['title'].dirty ||
+                  angForm.controls['title'].touched)
+              "
+              class="alert alert-danger"
+            >
+              <div
+                *ngIf="
+                  angForm.controls['title'].errors !== null &&
+                  angForm.controls['title'].errors['required']
+                "
+              >
+                <p style="color: tomato">Tytuł jest wymagany.</p>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label>ID galerii</label>
+              <input
+                class="form-control"
+                formControlName="galleryId"
+                type="number"
+              />
+              <p class="info-text">
+                Jeżeli chcesz stworzyć galerię do nowego posta kliknij dodaj
+                galerię wtedy, po zatwierdzeniu tytułu numer wygeneruje się
+                automatycznie. <br />
+                jeżeli jest już stworzona galeria i chcesz ją dodać do tego
+                posta, wpisz id.<br />
+                Jeśli galeria została dodana to po kliknięciu 'dodaj post'
+                przeniesie nas do edycji galerii.
+              </p>
+            </div>
+
+            <button
+              class="btn-add-gallery btn-black btn-reset"
+              type="button"
+              (click)="
+                addGalleryPopupService.loadGalleryPopupComponent(addGallery())
+              "
+              *ngIf="this.angForm.controls['galleryId'].value == null"
+            >
+              Dodaj galerię
+            </button>
+          </div>
+
+          <div class="container-right" formGroupName="postData">
+            <div class="form-group">
+              <label>Treść posta - krótki tekst</label>
+              <textarea
+                class="form-control short-p"
+                formControlName="teaser"
+                type="text"
+                required
+                maxlength="450"
+              >
+              </textarea>
+              <span></span>
+            </div>
+            <div
+              *ngIf="
+                postData.controls['teaser'].invalid &&
+                (postData.controls['teaser'].dirty ||
+                  postData.controls['teaser'].touched)
+              "
+              class="alert alert-danger"
+            >
+              <div
+                *ngIf="
+                  postData.controls['teaser'].errors !== null &&
+                  postData.controls['teaser'].errors['required']
+                "
+              >
+                <p style="color: tomato">Krótki tekst jest wymagany.</p>
+              </div>
+            </div>
+
+            <div class="form-array" formArrayName="mainContent">
+              <div
+                class="form-control"
+                *ngFor="let control of mainContent.controls; let i = index"
+              >
+                <div class="form-group">
+                  <label>Treść posta - cały tekst - paragraf {{ i + 1 }}</label>
+                  <textarea
+                    class="form-control long-p"
+                    type="text"
+                    required
+                    [formControl]="getMainContentParagraph(i)"
+                    maxlength="450"
+                  ></textarea>
+                  <div class="remove">
+                    <svg viewBox="0 0 24 24" (click)="removeParagraph(i)">
+                      <path
+                        fill="tomato"
+                        d="M19 4h-3.5l-1-1h-5l-1 1H5v2h14M6 19a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2V7H6v12Z"
+                      />
+                    </svg>
+                  </div>
+                  <span></span>
+                </div>
+                <div
+                  *ngIf="
+                    mainContent.at(i).invalid &&
+                    (mainContent.at(i).dirty || mainContent.at(i).touched)
+                  "
+                  class="alert alert-danger"
+                >
+                  <div
+                    *ngIf="
+                      mainContent.at(i).errors !== null &&
+                      mainContent.at(i).errors!['required']
+                    "
+                  >
+                    <p style="color: tomato">Cały tekst jest wymagany.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <button
+              type="button"
+              class="add-paragraph btn-reset"
+              (click)="addParagraph()"
+            >
+              Dodaj Paragraf
+            </button>
+          </div>
+        </div>
+      </form>
+    </div>
+
+    <div class="preview" *ngIf="angForm !== null">
+      <h2 class="main-label">Podgląd</h2>
+
+      <div class="preview-box">
+        <div class="preview-box-photo">
+          <label>Główne zdjęcie</label>
+          <div class="photo" [style.background-image]="image"></div>
+        </div>
+
+        <div class="preview-box-text">
+          <label>Tytuł</label>
+          <p class="title-view">
+            {{ angForm.controls["title"].value }}
+          </p>
+          <label>Treść posta - krótki tekst</label>
+          <p>
+            {{ postData.controls["teaser"].value }}
+          </p>
+          <label>Treść posta - cały tekst</label>
+          <p *ngFor="let paragraph of mainContent.controls; let i = index">
+            {{ getMainContentParagraph(i).value }}
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

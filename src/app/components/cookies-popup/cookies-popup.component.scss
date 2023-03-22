@@ -1,0 +1,51 @@
+.container {
+  position: fixed;
+  bottom: 0;
+  z-index: 1000;
+  width: 100%;
+  box-shadow: 0px 3px 15px rgba(0, 0, 0, 0.25);
+  background-color: #fff;
+  .box {
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 1rem;
+    margin: auto;
+    background-color: #fff;
+    color: #878787;
+    p {
+      padding-right: 2rem;
+      text-align: justify;
+      font-size: 1.2rem;
+      b {
+        text-decoration: underline;
+        cursor: pointer;
+      }
+    }
+    .btn {
+      padding: 0.5rem 1rem;
+      color: #fff;
+      border: 1px solid #96bf53;
+      background-color: #96bf53;
+      transition: color 0.3s, background-color 0.3s;
+      &:hover {
+        color: #96bf53;
+        background-color: #ffffff;
+      }
+    }
+  }
+}
+
+@media (min-width: 1200px) {
+  .container {
+    .box {
+      padding: 0;
+      p {
+        padding-left: 1.5rem;
+        line-height: 3.5rem;
+        font-size: 1.4rem;
+      }
+    }
+  }
+}

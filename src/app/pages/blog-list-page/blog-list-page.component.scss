@@ -1,0 +1,35 @@
+section {
+  margin-bottom: 5rem;
+}
+.btn {
+  position: relative;
+  left: 50%;
+  transform: translate(-50%, 0);
+  margin-top: 5rem;
+  color: #333;
+  background-color: #fff;
+  border: 2px solid #333;
+  &:hover {
+    color: #fff;
+    background-color: #333;
+  }
+}
+
+@media (min-width: 768px) {
+  section {
+    margin-bottom: 7rem;
+  }
+  .btn {
+    margin-top: 7rem;
+    height: 55px;
+  }
+}
+
+@media (min-width: 1200px) {
+  section {
+    margin-bottom: 10rem;
+  }
+  .btn {
+    margin-top: 10rem;
+  }
+}

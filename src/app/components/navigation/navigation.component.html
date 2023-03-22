@@ -1,33 +1,41 @@
 <!-- <nav class="sticky bgc"> -->
-<nav class="{{ currentStyle }}">
+<nav *ngIf="currentStyle !== null" class="{{ currentStyle }}">
   <div
-    class="sticky visible"
+    #navbar
+    class="fixed visible"
     id="navbar"
-    [ngClass]="scrollPosition + 90 > screenHeight ? 'bgc' : 'transparent'"
-    >
+    [ngClass]="shouldShowNavBackground() ? 'bgc' : 'transparent'"
+  >
     <div #navbar class="navbar">
-      <div class="navbar__nav-box">
+      <div class="nav-box">
         <input
           #checkbox
-          class="navbar__nav-box__checkbox has-checked"
+          class="checkbox has-checked"
           type="checkbox"
           (click)="toggleScroll()"
         />
-        <div class="navbar__nav-box__hamburger-lines">
-          <span class="navbar__nav-box__hamburger-lines__line line1"></span>
-          <span class="navbar__nav-box__hamburger-lines__line line2"></span>
-          <span class="navbar__nav-box__hamburger-lines__line line3"></span>
+        <div class="hamburger-lines">
+          <span class="line line1"></span>
+          <span class="line line2"></span>
+          <span class="line line3"></span>
         </div>
-        <div class="navbar__nav-box__logo">
+        <div class="logo-mobile">
           <img
-            src="/assets/img/logo-white.svg"
+            src="/assets/img/logomch.svg"
             alt="MK logo Fotografia Ślubna"
           />
         </div>
-        <div class="navbar__nav-box__menu-items">
+        <div class="logo-desktop">
+          <img
+            src="/assets/img/logomch.svg"
+            alt="MK logo Fotografia Ślubna"
+          />
+        </div>
+        <div class="menu-items">
           <app-nav-item
             *ngFor="let category of categories"
             [mainCategory]="category"
+            [currentStyle]="currentStyle"
             (routeEvent)="restartCheckedState()"
           ></app-nav-item>
         </div>

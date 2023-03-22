@@ -1,0 +1,105 @@
+.container {
+    min-height: 100vh;
+    background: #b993d6;
+    background: -webkit-linear-gradient(to right, #8ca6db, #b993d6);
+    background: linear-gradient(to right, #8ca6db, #b993d6);
+    h1 {
+      padding: 3rem 3rem 3rem;
+      width: 100%;
+      font-size: 3.6rem;
+      color: #fff;
+      border-bottom: 2px solid silver;
+    }
+    .btn-box {
+      display: flex;
+      justify-content: flex-end;
+      width: 100%;
+      .btn {
+        margin: 3rem;
+        font-size: 2rem;
+      }
+    }
+    .table-box {
+      padding: 3rem;
+      table,
+      th,
+      td {
+        border: 2px solid silver;
+      }
+      table {
+        width: 100%;
+        border-collapse: collapse;
+        font-size: 1.6rem;
+        background-color: #fff;
+        th {
+          padding: 1rem 0;
+          font-size: 2rem;
+        }
+        td {
+          padding: 1rem;
+        }
+        .delate-title {
+          color: tomato;
+        }
+        .edit,
+        .delate {
+          padding: 0;
+          width: 120px;
+          text-align: center;
+          cursor: pointer;
+          transition: opacity 0.3s;
+          svg {
+            width: 3rem;
+            height: 3rem;
+          }
+          &:hover {
+            opacity: 0.5;
+          }
+        }
+      }
+    }
+    .pagination {
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      margin-top: 3rem;
+      font-size: 2rem;
+      width: 100%;
+      ul {
+        display: flex;
+        flex-direction: row;
+        li {
+          list-style: none;
+          padding: 2rem;
+          span {
+            height: 4rem;
+            line-height: 4rem;
+            svg {
+              height: 4rem;
+              border: 2px solid #333;
+              path {
+                fill:#333;
+                transition: fill 0.3s
+              }
+            }
+          }
+        }
+        .pag-btn {
+          span {
+            svg {
+              padding: 1rem;
+              cursor: pointer;
+              transition: background-color 0.3s;
+              &:hover {
+                background-color: #333;
+                path {
+                  fill: #fff;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+
+}

@@ -1,52 +1,50 @@
 @import "variables";
 
 .container {
-  //padding-top: 1rem;
-  &__first-img > .img,
-  &__second-img > .img {
+  .img {
     height: 100%;
     width: 100%;
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
   }
-  &__first-img {
+  .first-img {
     padding: 1.5rem 1.5rem 0;
     height: 250px;
     width: 100%;
     overflow: hidden;
-    &__photo {
+    .img {
       background-image: url(/assets/img/introduction-1.webp);
     }
   }
-  &__second-img {
+  .second-img {
     padding: 0 1.5rem 0;
     height: 500px;
     width: 100%;
     overflow: hidden;
-    &__photo {
+    .img {
       background-image: url(/assets/img/introduction-2.webp);
     }
   }
-  &__title {
+  .title {
     padding: 3rem 1.5rem;
     font-family: $handWritingFont;
     font-size: 4.6rem;
     text-align: center;
   }
-  &__about-me {
+  .about-me {
     text-align: center;
-    &__name {
+    .name {
       padding-top: 3rem;
       font-family: $handWritingFont;
       font-size: 4.6rem;
     }
-    &__who-i-am {
+    .who-i-am {
       padding-bottom: 2.5rem;
       font-size: 1.2rem;
       color: #5a5959;
     }
-    &__description {
+    .description {
       padding-left: 1.5rem;
       padding-right: 1.5rem;
       padding-bottom: 1.2rem;
@@ -60,7 +58,7 @@
         color: #5a5959;
       }
     }
-    &__btn {
+    .btn {
       margin-top: 3rem;
       margin-bottom: 6.5rem;
     }
@@ -69,11 +67,11 @@
 
 @media (min-width: 375px) {
   .container {
-    &__title {
+    .title {
       font-size: 5rem;
     }
-    &__about-me {
-      &__name {
+    .about-me {
+      .name {
         font-size: 5rem;
       }
     }
@@ -82,26 +80,27 @@
 
 @media (min-width: 576px) {
   .container {
-    &__first-img {
+    .first-img {
       height: 400px;
     }
-    &__second-img {
+    .second-img {
       height: 600px;
     }
-    &__title {
+    .title {
       font-size: 5.4rem;
     }
-    &__about-me {
+    .about-me {
       margin-left: 1.5rem;
       margin-right: 1.5rem;
-      &__name {
+      .name {
         font-size: 5.4rem;
       }
-      &__who-i-am {
+      .who-i-am {
         padding-bottom: 3rem;
       }
-      &__btn {
+      .btn {
         margin-top: 3rem;
+        height: 55px;
       }
     }
   }
@@ -109,20 +108,20 @@
 
 @media (min-width: 768px) {
   .container {
-    &__second-img {
+    .second-img {
       height: 660px;
     }
-    &__title {
+    .title {
       font-size: 5.8rem;
     }
-    &__about-me {
-      &__name {
+    .about-me {
+      .name {
         font-size: 5.8rem;
       }
-      &__who-i-am {
+      .who-i-am {
         padding-bottom: 4rem;
       }
-      &__btn {
+      .btn {
         margin-top: 4rem;
       }
     }
@@ -136,42 +135,41 @@
     padding-left: 1.5rem;
     padding-right: 1.5rem;
 
-    &__first-img > .img,
-    &__second-img > .img {
+    .img {
       transition: transform 0.35s;
       &:hover {
         transform: scale(1.1);
       }
     }
-    &__first-img {
+    .first-img {
       padding: 0;
     }
-    &__second-img {
+    .second-img {
       padding: 0;
       height: 690px;
       grid-column: 2/3;
     }
-    &__title {
+    .title {
       margin: auto 2rem;
       padding: 0;
       font-size: 6.2rem;
     }
-    &__about-me {
+    .about-me {
       grid-column: 1/2;
       grid-row: 2/3;
       margin: auto 3rem;
-      &__name {
+      .name {
         padding-top: 0;
       }
-      &__who-i-am {
+      .who-i-am {
         padding-bottom: 4rem;
       }
-      &__description {
+      .description {
         padding-left: 0;
         padding-right: 0;
         font-size: 1.45rem;
       }
-      &__btn {
+      .btn {
         margin-top: 2rem;
         margin-bottom: 0;
       }
@@ -181,29 +179,30 @@
 
 @media (min-width: 1200px) {
   .container {
-    &__first-img {
+    .first-img {
       height: 430px;
     }
-    &__second-img {
+    .second-img {
       height: 750px;
     }
-    &__title {
+    .title {
       margin-left: 2rem;
       font-size: 6.6rem;
     }
-    &__about-me {
+    .about-me {
       margin-left: 4rem;
       margin-right: 4rem;
-      &__who-i-am {
+      .who-i-am {
         font-size: 1.3rem;
       }
-      &__description {
+      .description {
         padding-left: 1.5rem;
         padding-right: 1.5rem;
         font-size: 1.5rem;
       }
-      &__btn {
+      .btn {
         margin-top: 5rem;
+        font-size: 1.6rem;
       }
     }
   }

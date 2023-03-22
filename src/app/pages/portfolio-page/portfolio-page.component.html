@@ -1,0 +1,24 @@
+<app-display-photo
+  #displayPhoto
+  [ngStyle]="!active ? displayNonePhotoStyle : {}"
+  (exit)="active = false"
+  [pictures]="pictures"
+></app-display-photo>
+<section class="portfolio wrapper">
+  <app-title>Portfolio</app-title>
+  <div class="grid">
+    <div class="box" *ngFor="let picture of pictures; let i = index">
+      <div
+        class="picture"
+        [style.background-image]="'url(' + picture.image + ')'"
+        title="{{ picture.alt }}"
+        (click)="activate(i)"
+      ></div>
+    </div>
+  </div>
+  <p class="paragraph">
+    Aby zobaczyć więcej moich zdjęć sprawdź <b>pełną ofertę</b> i wybierz tą,
+    która Cię interesuje.
+  </p>
+  <button routerLink="/offer" class="btn btn-reset btn-black">PEŁNA OFERTA</button>
+</section>

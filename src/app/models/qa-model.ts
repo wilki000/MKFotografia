@@ -6,6 +6,12 @@ export interface QaModel {
 
 export const QA: QaModel[] = [
   {
+    question: 'Pliki cookies - do czego są wykorzystywane w serwisie?',
+    answer:
+      'Serwis wykorzystuje pliki cookies w celu obsługi kont użytkowników.',
+    expanded: false,
+  },
+  {
     question: 'Jaki jest czas oczekiwania na zrealizowany materiał?',
     answer: 'Czas oczekiwania wynosi maksymalnie 90 dni.',
     expanded: false,
@@ -135,7 +141,7 @@ export const QA: QaModel[] = [
   },
   {
     question:
-      'Przypadki losowe / jeśli nie będziesz mógł sfotografować naszego wesela?',
+      'Przypadki losowe / jeśli nie będziesz mogła sfotografować naszego wesela?',
     answer:
       'Jeszcze nie zdarzył mi się taki przypadek, ale gdyby stało się coś co uniemożliwiłoby mi obecność na waszym weselu to możecie być spokojni. Na pewno zapewnię najlepsze możliwe zastępstwo i nie będzie to nikt z przypadku. Obiecuję, że ewentualnego wyboru fotografa na zastępstwo dokonamy wspólnie.',
     expanded: false,

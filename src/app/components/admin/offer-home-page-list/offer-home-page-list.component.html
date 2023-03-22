@@ -1,0 +1,31 @@
+<div class="container">
+    <h1>Oferta - Strona Główna</h1>
+    <div class="btn-box">
+    </div>
+    <div class="table-box">
+      <table>
+        <tr>
+          <th>ID</th>
+          <th>Tytuł</th>
+          <th>Edycja</th>
+        </tr>
+  
+        <!-- ngfor -->
+        <tr *ngFor="let offer of offers">
+          <td class="id">{{ offer.id }}</td>
+          <td>{{ offer.title }}</td>
+          <td class="edit" routerLink="/admin/offer-home-page-edit/{{ offer.id }}">
+            <svg viewBox="0 0 24 24">
+              <path
+                fill="#333"
+                d="M5 19h1.4l8.625-8.625l-1.4-1.4L5 17.6ZM19.3 8.925l-4.25-4.2l1.4-1.4q.575-.575 1.413-.575q.837 0 1.412.575l1.4 1.4q.575.575.6 1.388q.025.812-.55 1.387ZM17.85 10.4L7.25 21H3v-4.25l10.6-10.6Zm-3.525-.725l-.7-.7l1.4 1.4Z"
+              />
+            </svg>
+          </td>
+        </tr>
+
+      </table>
+    </div>
+    
+  </div>
+  

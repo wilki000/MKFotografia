@@ -1,0 +1,43 @@
+.overlay {
+  position: fixed;
+  top: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  width: 100%;
+  background-color: #33333336;
+
+  .box {
+    padding: 3rem;
+    width: 500px;
+    background-color: #fff;
+    h2 {
+      text-align: center;
+      font-size: 2.8rem;
+    }
+    h3 {
+      padding: 1rem 0 2rem;
+      text-align: center;
+      font-size: 2.8rem;
+      color: tomato;
+    }
+    ul {
+      color: #7a7a7a;
+      margin-bottom: 1rem;
+      p {
+        font-size: 1.8rem;
+        background-color: #fff;
+      }
+      li {
+        margin: 0 4rem;
+        font-size: 1.6rem;
+      }
+    }
+    .btn {
+      margin-top: 2rem;
+      width: 100%;
+      text-transform: uppercase;
+    }
+  }
+}

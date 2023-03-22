@@ -1,20 +1,20 @@
 @import "variables";
 
-.offer {
+.offer-box {
   padding-top: 3rem;
-  &__nav {
+  .nav {
     display: none;
   }
-  &__background {
-    &__overlay {
+  .background {
+    .overlay {
       background-color: #fff;
-      &__offers {
+      .offers {
         display: flex;
         align-items: center;
         height: 470px;
         overflow: scroll;
         scrollbar-width: none;
-        &__offer {
+        .offer {
           min-width: 280px;
           height: 430px;
           margin-left: 1.5rem;
@@ -22,34 +22,33 @@
           &:last-child {
             margin-right: 1.5rem;
           }
-          &__img {
+          .img {
             width: 100%;
             height: 180px;
             background-size: cover;
             background-position: center;
           }
-          &__text-box {
+          .text-box {
             position: relative;
             height: 250px;
             padding: 1rem 1.5rem 1.5rem;
-            &__title {
+            .title {
               text-align: center;
-              font-family: $handWritingFont;
-              font-size: 2.4rem;
+              font-size: 2rem;
               font-weight: 700;
             }
-            &__paragraph {
+            .paragraph {
               position: relative;
               top: 5px;
               text-align: justify;
               font-size: 1.3rem;
               color: #727171;
             }
-            &__paragraph-desktop {
+            .paragraph-desktop {
               display: none;
               color: #727171;
             }
-            &__btn {
+            .btn {
               position: absolute;
               left: 50%;
               bottom: 0;
@@ -58,13 +57,13 @@
               white-space: nowrap;
               transform: translate(-50%, 0);
             }
-            &__btn-long {
+            .btn-long {
               display: none;
             }
           }
         }
       }
-      &__offers::-webkit-scrollbar {
+      .offers::-webkit-scrollbar {
         display: none;
       }
     }
@@ -72,17 +71,12 @@
 }
 
 @media (min-width: 375px) {
-  .offer {
-    &__background {
-      &__overlay {
-        &__offers {
-          &__offer {
+  .offer-box {
+    .background {
+      .overlay {
+        .offers {
+          .offer {
             min-width: 300px;
-            &__text-box {
-              &__title {
-                font-size: 2.6rem;
-              }
-            }
           }
         }
       }
@@ -91,15 +85,15 @@
 }
 
 @media (min-width: 576px) {
-  .offer {
-    &__background {
-      &__overlay {
-        &__offers {
-          &__offer {
+  .offer-box {
+    .background {
+      .overlay {
+        .offers {
+          .offer {
             min-width: 300px;
-            &__text-box {
-              &__title {
-                font-size: 2.8rem;
+            .text-box {
+              .title {
+                font-size: 2.2rem;
               }
             }
           }
@@ -110,13 +104,13 @@
 }
 
 @media (min-width: 992px) {
-  .offer {
+  .offer-box {
     padding-top: 6rem;
-    &__nav {
+    .nav {
       display: flex;
       justify-content: space-evenly;
       padding-bottom: 2rem;
-      &__button {
+      .button {
         text-transform: uppercase;
         font-weight: 700;
         color: #7e7e7e;
@@ -127,14 +121,15 @@
         }
       }
     }
-    &__background {
+    .background {
       transition: background-image 0.3s ease;
-      &__overlay {
-        &__offers {
+      background-size: cover;
+      .overlay {
+        .offers {
           display: block;
           height: 530px;
           overflow: hidden;
-          &__offer {
+          .offer {
             display: flex;
             flex-direction: row;
             position: absolute;
@@ -150,40 +145,42 @@
             &:last-child {
               margin-right: 2rem;
             }
-            &__img {
+            .img {
               height: 100%;
               width: 50%;
               background-size: cover;
             }
-            &__text-box {
+            .text-box {
               height: 100%;
               width: 50%;
               padding-top: 5rem;
               padding-left: 4rem;
               padding-right: 4rem;
-              &__title {
+              .title {
                 text-align: left;
                 font-size: 3.2rem;
+                font-family: $handWritingFont;
               }
-              &__paragraph {
+              .paragraph {
                 display: none;
               }
-              &__paragraph-desktop {
+              .paragraph-desktop {
                 display: block;
                 padding-top: 2rem;
                 text-align: justify;
                 font-size: 1.4rem;
               }
-              &__btn {
+              .btn {
                 display: none;
               }
-              &__btn-long {
+              .btn-long {
                 position: absolute;
                 left: 0;
                 bottom: 0;
                 display: block;
                 margin-left: 4rem;
                 margin-bottom: 5rem;
+                height: 55px;
                 white-space: nowrap;
                 transform: translate(0, 0);
               }
@@ -200,18 +197,21 @@
 }
 
 @media (min-width: 1200px) {
-  .offer {
-    &__background {
-      &__overlay {
-        &__offers {
-          &__offer {
-            &__text-box {
-              &__title {
+  .offer-box {
+    .background {
+      .overlay {
+        .offers {
+          .offer {
+            .text-box {
+              .title {
                 text-align: left;
                 font-size: 3.4rem;
               }
-              &__paragraph-desktop {
+              .paragraph-desktop {
                 font-size: 1.5rem;
+              }
+              .btn-long {
+                font-size: 1.6rem;
               }
             }
           }
@@ -222,12 +222,12 @@
 }
 
 @media (min-width: 1400px) {
-  .offer {
-    &__background {
-      &__overlay {
+  .offer-box {
+    .background {
+      .overlay {
         background-color: rgba(255, 255, 255, 0.4);
-        &__offers {
-          &__offer {
+        .offers {
+          .offer {
             margin-left: 0;
             margin-right: 0;
             &:last-child {

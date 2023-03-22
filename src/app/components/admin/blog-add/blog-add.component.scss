@@ -1,0 +1,187 @@
+@import "variables";
+
+.container {
+  min-height: 100vh;
+  background: #b993d6;
+  background: -webkit-linear-gradient(to right, #8ca6db, #b993d6);
+  background: linear-gradient(to right, #8ca6db, #b993d6);
+  h1 {
+    padding: 3rem 3rem 3rem;
+    width: 100%;
+    font-size: 3.6rem;
+    color: #fff;
+    border-bottom: 2px solid silver;
+  }
+  .add-post-box {
+    display: flex;
+    flex-direction: column;
+    margin: 3rem 3rem 0;
+
+    .form-box {
+      min-width: 450px;
+      display: inline-flex;
+      form {
+        width: 100%;
+        .btn-box {
+          display: flex;
+          justify-content: flex-end;
+          margin-bottom: 3rem;
+          .btn {
+            font-size: 2rem;
+          }
+        }
+        .form-container {
+          display: grid;
+          grid-template-columns: 1fr 1fr;
+          grid-template-rows: 30px auto;
+          padding: 2rem 3rem 3rem;
+          margin-bottom: 3rem;
+          background-color: #fff;
+          box-shadow: 0px 3px 15px rgba(0, 0, 0, 0.25);
+          h2 {
+            grid-column: 1/2;
+            grid-row: 1/2;
+            font-size: 2.4rem;
+          }
+          .container-left {
+            grid-column: 1/2;
+            grid-row: 2/3;
+            margin-right: 2rem;
+            .btn-add-gallery {
+              margin-top: 2rem;
+            }
+          }
+          .container-right {
+            grid-column: 2/3;
+            grid-row: 2/3;
+            margin-left: 2rem;
+          }
+          .form-group {
+            position: relative;
+            margin: 3.5rem 0 0;
+            min-width: 100%;
+            .upload {
+              margin-left: -0.5rem;
+              height: 40px;
+            }
+            textarea {
+              resize: vertical;
+            }
+            input {
+              width: 100%;
+              padding: 0 0.5rem;
+              height: 40px;
+              font-size: 1.6rem;
+            }
+            .info-text {
+              color: #adadad;
+            }
+            .short-p {
+              padding: 0.5rem;
+              min-width: 100%;
+              max-width: 100%;
+              min-height: 90px;
+              font-size: 1.6rem;
+            }
+            .long-p {
+              padding: 0.5rem;
+              min-width: 92%;
+              max-width: 92%;
+              min-height: 90px;
+              font-size: 1.6rem;
+            }
+            .remove {
+              position: absolute;
+              display: inline-block;
+              transition: opacity 0.3s;
+              svg {
+                width: 3rem;
+                height: 3rem;
+              }
+              &:hover {
+                opacity: 0.5;
+              }
+            }
+
+            label {
+              position: absolute;
+              top: -1.5rem;
+              left: 5px;
+              color: #adadad;
+              transform: translateY(-50%);
+              font-size: 1.6rem;
+              pointer-events: none;
+              transition: top 0.5s, color 0.5s;
+            }
+          }
+          .add-paragraph {
+            margin-bottom: 3rem;
+            padding: 1rem 2rem;
+            font-size: 1.6rem;
+            line-height: 2rem;
+            border: 2px solid #333;
+            transition: background-color 0.3s, color 0.3s;
+            &:hover {
+              color: #fff;
+              background-color: #333;
+            }
+          }
+          .form-group-check-box {
+            input {
+              height: 2rem;
+              width: 2rem;
+            }
+            label {
+              padding-left: 1rem;
+              font-size: 1.6rem;
+            }
+          }
+        }
+      }
+    }
+    .preview {
+      padding: 2rem 3rem 3rem;
+      margin-bottom: 3rem;
+      background-color: #ffffffac;
+      box-shadow: 0px 3px 15px rgba(0, 0, 0, 0.25);
+      .main-label {
+        margin-bottom: 1rem;
+      }
+      .preview-box {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        .preview-box-photo {
+          grid-column: 1/2;
+          margin-right: 2rem;
+
+          .photo {
+            max-width: 700px;
+            max-height: 490px;
+            aspect-ratio: 7/5;
+            border: 2px solid #fff;
+            background-size: cover;
+            background-position: center;
+          }
+        }
+        .preview-box-text {
+          grid-column: 2/3;
+          margin-left: 2rem;
+          .title-view {
+            font-family: "DancingScript";
+            font-size: 2.8rem;
+          }
+        }
+
+        label {
+          font-size: 1.6rem;
+          color: #ffffff;
+        }
+        .photo,
+        p {
+          margin-bottom: 2rem;
+        }
+      }
+
+    }
+  }
+}
