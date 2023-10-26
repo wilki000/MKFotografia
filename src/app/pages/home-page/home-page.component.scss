@@ -1,0 +1,46 @@
+.banner {
+    margin-top: 20px;
+    margin-bottom: 80px;
+    width: 100%;
+    height: 250px;
+    a {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        height: 100%;
+        .photo {
+            height: 100%;
+            width: 250px;
+            background-image: url('https://www.weselezklasa.pl/banery/Weselezklasa/ogloszenie250x250.gif');
+            border: 0;
+        }
+    }
+}
+
+@media (min-width: 750px) {
+    .banner {
+        margin-bottom: 110px;
+        height: 200px;
+        a {
+            .photo {
+                width: 750px;
+                background-image: url('https://www.weselezklasa.pl/banery/Weselezklasa/ogloszenie750x200.gif');
+                
+            }
+        }
+    }
+}
+@media (min-width: 992px) {
+    .banner {
+        margin-bottom: 130px;
+        height: 90px;
+        a {
+            .photo {
+                width: 970px;
+                background-image: url('https://www.weselezklasa.pl/banery/Weselezklasa/ogloszenie970x90.gif');
+                
+            }
+        }
+    }
+}
